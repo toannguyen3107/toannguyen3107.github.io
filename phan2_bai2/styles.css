@@ -1,0 +1,56 @@
+img{
+    border: 10px solid red; border-radius: 10px;
+    width:300px;
+}
+.header{
+    font-size: 2rem;
+    color:brown;
+    text-shadow: 0.5rem 0.3rem 0 blue;
+    font-weight: 900;
+}
+.starting{
+    font-size: 1.5rem;
+    background-color: black;
+}
+p>u{
+    font-size: 1.5rem;
+    font-weight: 800;
+}
+i{
+    font-weight: 600;
+}
+.heading2{
+    font-size: 1.8rem;
+    color: brown;
+    font-weight: 800;
+}
+li.one, li.one a {
+    color: red;
+}
+.heading3{
+    font-size: 1.8rem;
+    font-weight: 800;
+    color:brown;
+}
+table {
+    border-collapse: collapse;
+}
+table th,table td{
+    border: 0.1rem solid #abb9e1;
+}
+.footer{
+    line-height: 2rem;
+    margin-top: 0.3rem;
+}
+.footer span:first-child a{
+    text-decoration: none;
+    color:cadetblue;
+    font-weight: 600;
+    text-shadow: 3px 0 3px #111;
+}
+ul ul li{
+    line-height: 2rem;
+}
+.pagragraph1{
+    line-height: 2rem;
+}
