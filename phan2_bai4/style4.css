@@ -1,77 +1,93 @@
-*{margin: 0; box-sizing: border-box;}
-.container{
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container {
     width: 800px;
     margin-left: auto;
     margin-right: auto;
 }
-.header{
+
+.header {
     background-color: gray;
 }
-.header h1{
+
+.header h1 {
     line-height: 50px;
 }
-.menu{
+
+.menu {
     background-color: blue;
 }
-.menu ul{
+
+.menu ul {
     height: 50px;
     display: flex;
     align-items: center;
     justify-content: start;
     list-style-type: none;
 }
+
 .menu ul li {
     padding: 0 1rem 0 1rem;
 }
-.menu ul li a{
+
+.menu ul li a {
     color: #fff;
 }
-.main{
+
+.main {
     display: flex;
     flex-direction: row;
 }
+
 .main .left {
     display: flex;
     flex-direction: column;
     width: 250px;
 }
-.main .right{
+
+.main .right {
     width: 650px;
 }
-.main .left .top{
+
+.main .left .top {
     height: 150px;
     background-color: yellow;
 }
-.main .left .behind_top{
+
+.main .left .behind_top {
     height: 150px;
     background-color: gray;
 }
-.main .right .top{
+
+.main .right .top {
     padding: 1rem;
 }
+
 .main .right .bottom {
     display: flex;
     flex-direction: row;
     height: 128px;
 }
-.main .right .bottom .left{
+
+.main .right .bottom .b-left,
+.main .right .bottom .b-right {
     width: 50%;
-    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.main .right .bottom .b-left {
     background-color: green;
 }
-.main .right .bottom .right{
-    width: 50%;
-    height: 100%;
+
+.main .right .bottom .b-right {
     background-color: red;
 }
-.main .right .bottom .left p{
-    margin-top: 27.2px;
-}
-.main .right .bottom .right p {
-    margin-top: 27.2px;
-    margin-bottom: auto;
-}
-.footer{
+
+.footer {
     background-color: blue;
     height: 50px;
     display: flex;
