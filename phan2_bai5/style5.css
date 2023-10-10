@@ -41,6 +41,7 @@ body {
     background: center url(images03/bg-menu.png);
     background-repeat: no-repeat;
 }
+
 /* list - menu */
 .list ul {
     display: flex;
@@ -58,6 +59,7 @@ body {
     text-decoration: none;
     color: black
 }
+
 /* list at top menu */
 .menu .list ul li a {
     color: white;
@@ -85,15 +87,18 @@ body {
     border-radius: 0 0 20px 20px;
     margin-right: 3px;
 }
+
 /* background header main left */
 .main .left .bg-top {
     background: url(images03/bg-ad-top.png) no-repeat;
     height: 72px;
 }
+
 /* header in side main left */
 .main .left h2 {
     color: #d8e283;
 }
+
 /* main paragraph */
 .main .left .date-time p {
     font-weight: 600;
@@ -116,11 +121,6 @@ body {
     width: 100%;
 }
 
-.divider {
-    border-bottom: 2px solid #bbb;
-    width: 100%;
-}
-
 .right .list ul li:hover {
     background-color: #d8e283;
     border: 1px solid #000;
@@ -129,6 +129,7 @@ body {
 .menu ul li:hover {
     background: url(images03/bg-menu-hover.png) no-repeat;
 }
+
 /* main feed */
 .main .right .bg-feed {
     background: url(images03/bg-feed.gif);
@@ -153,7 +154,7 @@ body {
     border: 0;
 }
 
-.main .right .bg-feed button:active {
+.main .right .bg-feed button:hover {
     background: url(images03/button-feed.png);
     background-position: top;
     position: relative;
@@ -163,6 +164,7 @@ body {
     width: 100px;
     border: 0;
 }
+
 /*Comment at bottom page  */
 .comment {
     margin-top: 1rem;
@@ -188,4 +190,10 @@ body {
 .container .footer span {
     margin: 1rem;
     color: #fff;
+}
+
+@media screen and (max-width: 760px) {
+    body {
+        overflow: scroll;
+    }
 }
