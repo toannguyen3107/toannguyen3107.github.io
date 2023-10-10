@@ -45,7 +45,6 @@
 .main .left {
     display: flex;
     flex-direction: column;
-    width: 250px;
 }
 
 .main .right {
@@ -54,11 +53,13 @@
 
 .main .left .top {
     height: 150px;
+    width: 250px;
     background-color: yellow;
 }
 
 .main .left .behind_top {
     height: 150px;
+    width: 250px;
     background-color: gray;
 }
 
