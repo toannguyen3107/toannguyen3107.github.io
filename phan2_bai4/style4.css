@@ -52,14 +52,24 @@
 .main .right .bottom {
     display: flex;
     flex-direction: row;
+    height: 128px;
 }
 .main .right .bottom .left{
     width: 50%;
+    height: 100%;
     background-color: green;
 }
 .main .right .bottom .right{
     width: 50%;
+    height: 100%;
     background-color: red;
+}
+.main .right .bottom .left p{
+    margin-top: 27.2px;
+}
+.main .right .bottom .right p {
+    margin-top: 27.2px;
+    margin-bottom: auto;
 }
 .footer{
     background-color: blue;
