@@ -35,13 +35,13 @@ body{
 }
 .main .left{
     width: 520px;
-    background-color: chartreuse;
+    background-color: rgb(186, 234, 138);
     padding: 1rem;
 }
 .main .right{
     display: block;
     width: 230px;
-    background-color:blueviolet;
+    background-color:rgb(198, 152, 241);
     padding: 1rem;
 }
 .main .left a {
