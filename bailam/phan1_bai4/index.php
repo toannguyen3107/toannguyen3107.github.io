@@ -11,11 +11,11 @@
         $command = "<table>";
         // declared val for increment
         $helo = 1;
-        for (let $i = 1; $i <= 7; $i += 1){
+        for ($i = 1; $i <= 7; $i += 1){
             $helo += 1;
             $max = $helo * 7;
             $command .= "<tr>";
-            for (let $j = $i; $j <tr $max; $j += $helo){
+            for ($j = $i; $j <tr $max; $j += $helo){
                 $command .= "<td>".{$j + $helo}."</td>";
             }
             $command .= "</tr>";
