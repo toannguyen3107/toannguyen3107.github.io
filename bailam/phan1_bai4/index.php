@@ -9,7 +9,7 @@
 <body>
         <?php
         // 
-        $command = '<table class="border-collapse border border-slate-600 static left-2/4 top-2/4 ">';
+        $command = '<table class="border-collapse border border-slate-600 m-auto">';
         // declared val for increment
         $helo = 1;
         for ($i = 1; $i <= 7; $i += 1){
