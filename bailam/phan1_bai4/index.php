@@ -6,21 +6,21 @@
     <title>Document</title>
 </head>
 <body>
-    <table>
         <?php
         // 
-        $command = "<tr>";
+        $command = "<table>";
         // declared val for increment
         $helo = 1;
         for (let $i = 1; $i <= 7; $i += 1){
             $helo += 1;
             $max = $helo * 7;
-            for (let $j = $i; $j < $max; $j += $helo){
-                $command .= "<tr>".{$j + $helo}."</tr>";
+            $command .= "<tr>";
+            for (let $j = $i; $j <tr $max; $j += $helo){
+                $command .= "<td>".{$j + $helo}."</td>";
             }
+            $command .= "</tr>";
         }
-        $command .= "</tr>";
+        $command .= "</table>";
         ?>
-    </table>
 </body>
 </html>
