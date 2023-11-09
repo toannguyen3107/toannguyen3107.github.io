@@ -8,8 +8,8 @@
 <body>
     <?php
         $param1 = 100;
-        $test = $param1 % 5;
         function handler($params){
+            $params %= 5;
             switch ($params) {
                 case 0:
                     echo "Hello";
@@ -28,9 +28,13 @@
                     break;
             }
         }
-        handler($test);
     ?>  
 
-
+    <h3>TH1: module = 0</h3><span><?php handler(10)?></span>
+    <h3>TH1: module = 1</h3><span><?php handler(11)?></span>
+    <h3>TH1: module = 2</h3><span><?php handler(12)?></span>
+    <h3>TH1: module = 3</h3><span><?php handler(13)?></span>
+    <h3>TH1: module = 4</h3><span><?php handler(14)?></span>
+    
 </body>
 </html>
