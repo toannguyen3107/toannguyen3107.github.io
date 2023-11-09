@@ -16,7 +16,7 @@
             $max = $helo * 7;
             $command .= "<tr>";
             for ($j = $i; $j <tr $max; $j += $helo){
-                $command .= "<td>".{$j + $helo}."</td>";
+                $command .= "<td>".$j."</td>";
             }
             $command .= "</tr>";
         }
