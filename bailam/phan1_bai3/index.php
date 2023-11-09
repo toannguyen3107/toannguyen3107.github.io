@@ -7,7 +7,7 @@
 </head>
 <body>
     <?php
-        for($i = 1; $i <=100; i += 2){
+        for($i = 1; $i <=100; $i += 2){
             echo "$i\t"
         }
         $i = 0;
