@@ -30,11 +30,11 @@
         }
     ?>  
 
-    <h3>TH1: module = 0</h3><p><?php handler(10)?></p>
-    <h3>TH2: module = 1</h3><p><?php handler(11)?></p>
-    <h3>TH3: module = 2</h3><p><?php handler(12)?></p>
-    <h3>TH4: module = 3</h3><p><?php handler(13)?></p>
-    <h3>TH5: module = 4</h3><p><?php handler(14)?></p>
+    <h3>TH1: modulo = 0</h3><p><?php handler(10)?></p>
+    <h3>TH2: modulo = 1</h3><p><?php handler(11)?></p>
+    <h3>TH3: modulo = 2</h3><p><?php handler(12)?></p>
+    <h3>TH4: modulo = 3</h3><p><?php handler(13)?></p>
+    <h3>TH5: modulo = 4</h3><p><?php handler(14)?></p>
 
 </body>
 </html>
