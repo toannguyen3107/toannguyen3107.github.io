@@ -18,7 +18,7 @@
             echo "How are you?"
             break;
         case 2:
-            echo "I’m doing well, thank you";
+            echo "I'm doing well, thank you";
             break;
         case 3:
             echo "See you later";
