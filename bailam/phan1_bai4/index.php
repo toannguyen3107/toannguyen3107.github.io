@@ -22,5 +22,8 @@
         }
         $command .= "</table>";
         ?>
+        <?php
+        echo $command;
+        ?>
 </body>
 </html>
