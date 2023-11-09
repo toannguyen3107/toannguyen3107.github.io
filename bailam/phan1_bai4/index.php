@@ -16,7 +16,7 @@
             $max = $helo * 7;
             $command .= '<tr class="text-center">';
             for ($j = $i; $j <= $max; $j += $helo){
-                $command .= '<td class="bg-amber-400 p-1">'.$j."</td>";
+                $command .= '<td class="bg-amber-400 p-1 border border-slate-600">'.$j."</td>";
             }
             $helo += 1;
             $command .= "</tr>";
