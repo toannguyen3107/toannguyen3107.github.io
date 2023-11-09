@@ -6,6 +6,7 @@
     <title>Document</title>
 </head>
 <body>
+    <h1>Using For command!</h1>
     <?php
         for($i = 1; $i <= 100; $i += 2){
             echo "$i\t";
@@ -14,7 +15,7 @@
         echo "<hr>\n<h1>Using While command!</h1>";
         while($i <= 100){
             if($i % 2 != 0 ){
-                echo $i;
+                echo $i."\t";
             }
             $i += 1;
         }
