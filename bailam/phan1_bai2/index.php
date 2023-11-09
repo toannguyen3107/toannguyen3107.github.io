@@ -9,29 +9,30 @@
 <body>
     <h1>hello world</h1>
     <?php
-    $param1 = 100;
-    $test = $param1 % 5;
+        $param1 = 100;
+        $test = $param1 % 5;
         function handler($params){
-            switch($params){
+            switch ($params) {
                 case 0:
-                echo "Hello";
-                break;
-            case 1:
-                echo "How are you?"
-                break;
-            case 2:
-                echo "I'm doing well, thank you";
-                break;
-            case 3:
-                echo "See you later";
-                break;
-            case 4:
-                echo "Good-bye"
-                break;
+                    echo "Hello";
+                    break;
+                case 1:
+                    echo "How are you?";
+                    break;
+                case 2:
+                    echo "I'm doing well, thank you";
+                    break;
+                case 3:
+                    echo "See you later";
+                    break;
+                case 4:
+                    echo "Good-bye";
+                    break;
             }
         }
         handler($test);
-    ?>
+    ?>  
+
 
 </body>
 </html>
