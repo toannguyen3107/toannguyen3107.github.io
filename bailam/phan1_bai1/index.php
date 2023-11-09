@@ -10,10 +10,10 @@
         $x = 10;
         $y = 7;
     ?>
-    <p> 10 + 7 = <?php $x + $y?></p>
-    <p> 10 + 7 = <?php $x - $y?></p>
-    <p> 10 + 7 = <?php $x * $y?></p>
-    <p> 10 + 7 = <?php $x / $y?></p>
-    <p> 10 + 7 = <?php $x % $y?></p>
+    <p> 10 + 7 = <?php echo $x + $y?></p>
+    <p> 10 + 7 = <?php echo $x - $y?></p>
+    <p> 10 + 7 = <?php echo $x * $y?></p>
+    <p> 10 + 7 = <?php echo $x / $y?></p>
+    <p> 10 + 7 = <?php echo $x % $y?></p>
 </body>
 </html>
