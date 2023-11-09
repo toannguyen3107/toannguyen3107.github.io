@@ -10,7 +10,8 @@
         for(let $i = 1; $i <=100; i += 2){
             echo "$i\t"
         }
-        $i = 0
+        $i = 0;
+        echo "<hr>\n<h1>Using While command!</h1>";
         while($i <= 100){
             if($i % 2 != 0 ){
                 echo $i;
