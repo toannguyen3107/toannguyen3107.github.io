@@ -9,14 +9,14 @@
 <body>
         <?php
         // 
-        $command = '<table>';
+        $command = '<table class="border-collapse">';
         // declared val for increment
         $helo = 1;
         for ($i = 1; $i <= 7; $i += 1){
             $max = $helo * 7;
             $command .= '<tr class="text-center">';
             for ($j = $i; $j <= $max; $j += $helo){
-                $command .= '<td class="text-amber-400 p-1">'.$j."</td>";
+                $command .= '<td class="bg-amber-400 p-1">'.$j."</td>";
             }
             $helo += 1;
             $command .= "</tr>";
