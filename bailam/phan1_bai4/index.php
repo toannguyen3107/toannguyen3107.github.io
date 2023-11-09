@@ -15,7 +15,7 @@
             $helo += 1
             $max = $helo * 7
             for (let $j = $i; $j <$max; $j += $helo){
-                $command .= "<tr>($j + $helo)</tr>";
+                $command .= "<tr>".${$j + $helo}."</tr>";
             }
         }
         $command .= "</tr>";
