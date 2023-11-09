@@ -12,7 +12,8 @@
     $param1 = 100;
     $test = $param1 % 5;
         function handler($params){
-            case 0:
+            switch($params){
+                case 0:
                 echo "Hello";
                 break;
             case 1:
@@ -27,6 +28,7 @@
             case 4:
                 echo "Good-bye"
                 break;
+            }
         }
         handler($test);
     ?>
