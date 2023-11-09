@@ -14,7 +14,7 @@
         for ($i = 1; $i <= 7; $i += 1){
             $max = $helo * 7;
             $command .= "<tr>";
-            for ($j = $i; $j < $max; $j += $helo){
+            for ($j = $i; $j <= $max; $j += $helo){
                 $command .= "<td>".$j."</td>";
             }
             $helo += 1;
