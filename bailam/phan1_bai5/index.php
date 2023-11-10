@@ -16,7 +16,7 @@
 </head>
 <body>
     <?php
-
+        $result = 0;
         if($_SERVER['REQUEST_METHOD'] === 'GET'){
             $x = $_GET['res'];
             $result = eval($x);
