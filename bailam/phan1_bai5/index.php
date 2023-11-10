@@ -6,68 +6,38 @@
     <title>Phan 1 - bai 5</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-    function handler(e) {
-        const resultInput = document.getElementById('res');
-        const currentValue = resultInput.value;
-        console.log(e.currentTarget.value);
-
-    if (e.target.value == "AC") {
+        function handler(e) {
+    const resultInput = document.getElementById('res');
+    const currentValue = resultInput.value;
+    console.log(e.currentTarget.value);
+    if(e.target.value == "AC"){
         resultInput.value = '0';
-    } else {
-        // If not AC, append the clicked value to the existing value with a space
-        resultInput.value = currentValue === '0' ? e.target.value : currentValue + ' ' + e.target.value;
+    }else{
+        resultInput.value = currentValue === '0' ? e.target.value : currentValue + e.target.value;
     }
+    
 }
-</script>
+    </script>
 </head>
 <body>
 <?php
-// Function to calculate the expression
-function calculateExpression($expression) {
-    // Split the expression into an array of values and operators
-    $tokens = preg_split('/\s+/', $expression);
+    $result = 0;
 
-    // Use a loop to perform the calculation
-    $result = (float)$tokens[0];  // Initialize result with the first number
-    for ($i = 1; $i < count($tokens); $i += 2) {
-        $operator = $tokens[$i];
-        $operand = (float)$tokens[$i + 1];
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        $expression = $_POST['ret'];
 
-        // Perform the operation based on the operator
-        switch ($operator) {
-            case '+':
-                $result += $operand;
-                break;
-            case '-':
-                $result -= $operand;
-                break;
-            case '*':
-                $result *= $operand;
-                break;
-            case '/':
-                // Check for division by zero
-                if ($operand != 0) {
-                    $result /= $operand;
-                } else {
-                    return 'Error: Division by zero';
-                }
-                break;
-            default:
-                return 'Error: Invalid operator';
-        }
+    // Validate the expression (you may want to add more validation)
+    if (preg_match('/^[0-9+\-*/\s()]+$/', $expression)) {
+        // Use eval to calculate the result
+        eval('$result = (' . $expression . ');');
+    } else {
+        // Handle invalid expressions
+        $result = 'Invalid Expression';
     }
-
-    return $result;
-}
-
-// Check if the form is submitted
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $expression = $_POST['ret'];
-    $result = calculateExpression($expression);
 }
 ?>
+
 <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post" class="w-10/12 md:w-5/12 flex flex-row flex-wrap bg-green-400 p-3 align-center border-2 border-4 border-indigo-500/100 rounded-lg mx-auto justify-center">
-    <!-- Form content... -->
         <input type="text" class="bg-slate-100 w-full p-2 border-2 border-black rounded-xl mb-3" disabled id="res" value="<?php echo $result;?>" name="ret">
         <div class="w-3/12">
         <button type="button" class="w-10/12 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800" onclick="handler(event);" value="+">+</button>
