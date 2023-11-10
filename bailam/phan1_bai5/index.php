@@ -16,9 +16,9 @@
 </head>
 <body>
     <?php
-        
+
         if($_SERVER['REQUEST_METHOD'] === 'POST'){
-            $x = $_GET['res'];
+            $x = $_POST['res'];
             $result = eval($x);
         }
     ?>
