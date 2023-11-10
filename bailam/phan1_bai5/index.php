@@ -13,7 +13,7 @@
     if(e.target.value == "AC"){
         resultInput.value = '0';
     }else{
-        resultInput.value = currentValue === '0' ? e.target.value : currentValue + e.target.value;
+        resultInput.value = currentValue === '0' ? e.target.value : currentValue+' '+ e.target.value;
     }
     
 }
