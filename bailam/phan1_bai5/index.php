@@ -20,13 +20,21 @@
     </script>
 </head>
 <body>
-    <?php
-        $result = 0;
-        if($_SERVER['REQUEST_METHOD'] === 'POST'){
-            $x = $_POST['ret'];
-            $result = eval('return ($x);');
-        }
-    ?>
+<?php
+function calculateExpression($expression) {
+    // Use the eval function to calculate the expression
+    eval('$result = ' . $expression . ';');
+
+    return $result;
+}
+
+// Example usage:
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $expression = $_POST['ret'];
+    $result = calculateExpression($expression);
+    // Do something with $result, such as displaying it or storing it.
+}
+?>
 <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post" class="w-10/12 md:w-5/12 flex flex-row flex-wrap bg-green-400 p-3 align-center border-2 border-4 border-indigo-500/100 rounded-lg mx-auto justify-center">
         <input type="text" class="bg-slate-100 w-full p-2 border-2 border-black rounded-xl mb-3" disabled id="res" value="<?php echo $result;?>" name="ret">
         <div class="w-3/12">
