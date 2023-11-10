@@ -22,18 +22,48 @@
 </head>
 <body>
 <?php
+// Function to calculate the expression
 function calculateExpression($expression) {
-    // Use the eval function to calculate the expression
-    eval('$result = ' . $expression . ';');
+    // Split the expression into an array of values and operators
+    $tokens = preg_split('/\s+/', $expression);
+
+    // Use a loop to perform the calculation
+    $result = (float)$tokens[0];  // Initialize result with the first number
+    for ($i = 1; $i < count($tokens); $i += 2) {
+        $operator = $tokens[$i];
+        $operand = (float)$tokens[$i + 1];
+
+        // Perform the operation based on the operator
+        switch ($operator) {
+            case '+':
+                $result += $operand;
+                break;
+            case '-':
+                $result -= $operand;
+                break;
+            case '*':
+                $result *= $operand;
+                break;
+            case '/':
+                // Check for division by zero
+                if ($operand != 0) {
+                    $result /= $operand;
+                } else {
+                    return 'Error: Division by zero';
+                }
+                break;
+            default:
+                return 'Error: Invalid operator';
+        }
+    }
 
     return $result;
 }
 
-// Example usage:
+// Check if the form is submitted
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $expression = $_POST['ret'];
     $result = calculateExpression($expression);
-    // Do something with $result, such as displaying it or storing it.
 }
 ?>
 <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post" class="w-10/12 md:w-5/12 flex flex-row flex-wrap bg-green-400 p-3 align-center border-2 border-4 border-indigo-500/100 rounded-lg mx-auto justify-center">
