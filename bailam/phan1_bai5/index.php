@@ -10,7 +10,7 @@
     const resultInput = document.getElementById('res');
     const currentValue = resultInput.value;
     console.log(e.currentTarget.value);
-    if(e.target.value === 'AC'){
+    if(e.target.value == "AC"){
         resultValue.value = 0;
     }else{
         resultInput.value = currentValue === '0' ? e.target.value : currentValue + e.target.value;
