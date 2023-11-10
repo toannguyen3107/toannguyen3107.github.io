@@ -9,15 +9,7 @@
 <body>
 
     <form action="/index.php" method="get" class="flex flex-row flex-wrap">
-        <button type= "button" class="btn btn-secondary col-1/4" value="1">1</button>
-        <button type= "button" class="btn btn-secondary col-1/4" value="2">2</button>
-        <button type= "button" class="btn btn-secondary col-1/4" value="3">3</button>
-        <button type= "button" class="btn btn-secondary col-1/4" value="4">4</button>
-        <button type= "button" class="btn btn-secondary col-1/4" value="5">5</button>
-        <button type= "button" class="btn btn-secondary col-1/4" value="6">6</button>
-        <button type= "button" class="btn btn-secondary col-1/4" value="7">7</button>
-        <button type= "button" class="btn btn-secondary col-1/4" value="8">8</button>
-        <button type= "button" class="btn btn-secondary col-1/4" value="9">9</button>
+    <button type="button" class="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">Light</button>
         <button type="submit">=</button>
     </form>
 </body>
