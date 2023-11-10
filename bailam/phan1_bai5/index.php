@@ -11,7 +11,7 @@
     const currentValue = resultInput.value;
     console.log(e.currentTarget.value);
     if(e.target.value == "AC"){
-        resultValue.value = '0';
+        resultInput.value = '0';
     }else{
         resultInput.value = currentValue === '0' ? e.target.value : currentValue + e.target.value;
     }
