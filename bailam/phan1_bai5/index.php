@@ -27,7 +27,7 @@
         $expression = $_POST['ret'];
 
     // Validate the expression (you may want to add more validation)
-        eval('$result = (' . $expression . ');');
+        echo "<h1>" . $expression . "</h1>";
 }
 ?>
 
