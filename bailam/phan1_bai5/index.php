@@ -27,13 +27,7 @@
         $expression = $_POST['ret'];
 
     // Validate the expression (you may want to add more validation)
-    if (preg_match('/^[0-9+\-*/\s()]+$/', $expression)) {
-        // Use eval to calculate the result
         eval('$result = (' . $expression . ');');
-    } else {
-        // Handle invalid expressions
-        $result = 'Invalid Expression';
-    }
 }
 ?>
 
