@@ -22,60 +22,60 @@
             $result = eval($x);
         }
     ?>
-    <form action="./index.php" method="get" class="w-8/12 flex flex-row flex-wrap bg-green-400 p-3 align-center border-2 border-4 border-indigo-500/100 rounded-lg mx-auto justify-center" >
-    <input type="text" class="bg-slate-100 w-full p-2 border-2 border-black rounded-xl mb-3" disabled id="res" value="<?php echo $result;?>" name="ret">
-    <div class="w-3/12">
+<form action="<?php echo $_SERVER['PHP_SELF'];?>" method="get" class="w-8/12 flex flex-row flex-wrap bg-green-400 p-3 align-center border-2 border-4 border-indigo-500/100 rounded-lg mx-auto justify-center">
+        <input type="text" class="bg-slate-100 w-full p-2 border-2 border-black rounded-xl mb-3" disabled id="res" value="<?php echo $result;?>" name="ret">
+        <div class="w-3/12">
         <button type="button" class="w-10/12 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800" onclick="handler(event);" value="+">+</button>
-    </div>
-    <div class="w-3/12">
-    <button type="button" class="w-10/12 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800" onclick="handler(event);" value="-">-</button>
-    </div>
+        </div>
+        <div class="w-3/12">
+        <button type="button" class="w-10/12 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800" onclick="handler(event);" value="-">-</button>
+        </div>
     
-    <div class="w-3/12">
-    <button type="button" class="w-10/12 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800" onclick="handler(event);" value="*">*</button>
-    </div>
-    <div class="w-3/12">
-        <button type="button" class="w-10/12 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800" onclick="handler(e);" value="/">/</button>
-    </div>
-    <div class="w-3/12">
+        <div class="w-3/12">
+        <button type="button" class="w-10/12 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800" onclick="handler(e);" value="*">*</button>
+        </div>
+        <div class="w-3/12">
+            <button type="button" class="w-10/12 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800" onclick="handler(e);" value="/">/</button>
+        </div>
+        <div class="w-3/12">
         <button type="button" class="w-10/12 text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700" id="one" value="1" onclick="handler(event);">1</button>
-    </div>
-    <div class="w-3/12">
+        </div>
+        <div class="w-3/12">
         <button type="button" class="w-10/12 text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700" id="two" value="2" onclick="handler(event);">2</button>
-    </div>
-    <div class="w-3/12">
+        </div>
+        <div class="w-3/12">
         <button type="button" class="w-10/12 text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700" id="three" value="3" onclick="handler(event);">3</button>
-    </div>
+        </div>
     
-    <div class="w-3/12">
+        <div class="w-3/12">
         <button type="button" class="w-10/12 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800" value="^" onclick="handler(event);">^</button>
-    </div>
-    <div class="w-3/12">
+        </div>
+        <div class="w-3/12">
         <button type="button" class="w-10/12 text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700" id="four" value="4"  onclick="handler(event);">4</button>
-    </div>
+        </div>
     
-    <div class="w-3/12">
+        <div class="w-3/12">
         <button type="button" class="w-10/12 text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700" id="five" value="5" onclick="handler(event);">5</button>
-    </div>
-    <div class="w-3/12">
+        </div>
+        <div class="w-3/12">
         <button type="button" class="w-10/12 text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700" id="six" value="6" onclick="handler(event);">6</button>
-    </div>
-    <div class="w-3/12">
+        </div>
+        <div class="w-3/12">
         <button type="button" class="w-10/12 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800" value="^-1" onclick="handler(event);">^-1</button>
-    </div>
-    <div class="w-3/12">
+        </div>
+        <div class="w-3/12">
         <button type="button" class="w-10/12 text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700" id="seven" value="7" onclick="handler(event);">7</button>
-    </div>
-    <div class="w-3/12">
+        </div>
+        <div class="w-3/12">
         <button type="button" class="w-10/12 text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700" id="eight" value="8" onclick="handler(event);">8</button>
-    </div>
-    <div class="w-3/12">
+        </div>
+        <div class="w-3/12">
         <button type="button" class="w-10/12 text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700" id="night" value="9" onclick="handler(event);">9</button>
-    </div>
-    <div class="w-3/12">
+        </div>
+        <div class="w-3/12">
             <button type="submit"  class="w-10/12 focus:outline-none text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900">=</button>
-    </div>
-    </form>
+        </div>
+</form>
 
 
 </body>
