@@ -10,7 +10,12 @@
     const resultInput = document.getElementById('res');
     const currentValue = resultInput.value;
     console.log(e.currentTarget.value);
-    resultInput.value = currentValue === '0' ? e.target.value : currentValue + e.target.value;
+    if(e.target.value === 'AC'){
+        resultValue.value = 0;
+    }else{
+        resultInput.value = currentValue === '0' ? e.target.value : currentValue + e.target.value;
+    }
+    
 }
     </script>
 </head>
@@ -32,10 +37,10 @@
         </div>
     
         <div class="w-3/12">
-        <button type="button" class="w-10/12 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800" onclick="handler(e);" value="*">*</button>
+        <button type="button" class="w-10/12 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800" onclick="handler(event);" value="*">*</button>
         </div>
         <div class="w-3/12">
-            <button type="button" class="w-10/12 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800" onclick="handler(e);" value="/">/</button>
+            <button type="button" class="w-10/12 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800" onclick="handler(event);" value="/">/</button>
         </div>
         <div class="w-3/12">
         <button type="button" class="w-10/12 text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700" id="one" value="1" onclick="handler(event);">1</button>
@@ -73,7 +78,10 @@
         <button type="button" class="w-10/12 text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700" id="night" value="9" onclick="handler(event);">9</button>
         </div>
         <div class="w-3/12">
-            <button type="submit"  class="w-10/12 focus:outline-none text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900">=</button>
+            <button type="button" onclick="handler(event);" value="AC" class="w-10/12 text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">AC</button>
+        </div>
+        <div class="w-full">
+            <button type="submit" class="w-full focus:outline-none text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900">=</button>
         </div>
 </form>
 
