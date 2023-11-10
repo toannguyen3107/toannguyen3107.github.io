@@ -9,7 +9,8 @@
 <body>
 
     <form action="/index.php" method="get" class="flex flex-row flex-wrap">
-        <button class="btn btn-white">1</button>
+        <button type= "button" class="btn btn-white">1</button>
+        <button type="submit">=</button>
     </form>
 </body>
 </html>
