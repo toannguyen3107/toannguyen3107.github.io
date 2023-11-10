@@ -6,15 +6,19 @@
     <title>Phan 1 - bai 5</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-        function handler(e) {
-    const resultInput = document.getElementById('res');
-    const currentValue = resultInput.value;
-    console.log(e.currentTarget.value);
-    if(e.target.value == "AC"){
+    function handler(e) {
+        const resultInput = document.getElementById('res');
+        const currentValue = resultInput.value;
+        console.log(e.currentTarget.value);
+
+    if (e.target.value == "AC") {
         resultInput.value = '0';
-    }else{
-        resultInput.value = currentValue === '0' ? e.target.value : currentValue+' '+ e.target.value;
+    } else {
+        // If not AC, append the clicked value to the existing value with a space
+        resultInput.value = currentValue === '0' ? e.target.value : currentValue + ' ' + e.target.value;
     }
+}
+
     
 }
     </script>
