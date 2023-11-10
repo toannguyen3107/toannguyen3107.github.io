@@ -24,7 +24,7 @@
         $result = 0;
         if($_SERVER['REQUEST_METHOD'] === 'POST'){
             $x = $_POST['ret'];
-            $result = eval('return $x;');
+            $result = eval('return ($x);');
         }
     ?>
 <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post" class="w-10/12 md:w-5/12 flex flex-row flex-wrap bg-green-400 p-3 align-center border-2 border-4 border-indigo-500/100 rounded-lg mx-auto justify-center">
