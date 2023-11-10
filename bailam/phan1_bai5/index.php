@@ -11,7 +11,7 @@
         if(isset($_GET['']))
     ?>
     <form action="./index.php" method="get" class=" flex flex-row flex-wrap bg-red-200 p-3 align-center">
-    <input type="text" class="bg-slate-100 w-full rouded-xl" disabled id="result">
+    <input type="text" class="bg-slate-100 w-full p-2 border-2 border-black rounded-xl mb-3" disabled id="result">
     <button type="button" class="w-3/12 text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">1</button>
     <button type="button" class="w-3/12 text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">2</button>
     <button type="button" class="w-3/12 text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">3</button>
