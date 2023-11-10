@@ -20,13 +20,52 @@
     </script>
 </head>
 <body>
-    <?php
-        $result = 0;
-        if($_SERVER['REQUEST_METHOD'] === 'POST'){
-            $x = $_POST['ret'];
-            $result = eval($x);
+<?php
+$result = 0;
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $x = $_POST['ret'];
+    
+    // Split the input into operands and operator
+    preg_match('/([0-9.]+)\s*([+\-*\/^]*)\s*([0-9.]+)/', $x, $matches);
+
+    // Check if the matches are found
+    if (count($matches) === 4) {
+        $operand1 = (float)$matches[1];
+        $operator = $matches[2];
+        $operand2 = (float)$matches[3];
+
+        // Perform the calculation based on the operator
+        switch ($operator) {
+            case '+':
+                $result = $operand1 + $operand2;
+                break;
+            case '-':
+                $result = $operand1 - $operand2;
+                break;
+            case '*':
+                $result = $operand1 * $operand2;
+                break;
+            case '/':
+                // Check for division by zero
+                if ($operand2 != 0) {
+                    $result = $operand1 / $operand2;
+                } else {
+                    $result = "Error: Division by zero!";
+                }
+                break;
+            case '^':
+                $result = pow($operand1, $operand2);
+                break;
+            default:
+                $result = "Error: Invalid operator!";
         }
-    ?>
+    } else {
+        $result = "Error: Invalid input!";
+    }
+}
+?>
+
 <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post" class="w-10/12 md:w-5/12 flex flex-row flex-wrap bg-green-400 p-3 align-center border-2 border-4 border-indigo-500/100 rounded-lg mx-auto justify-center">
         <input type="text" class="bg-slate-100 w-full p-2 border-2 border-black rounded-xl mb-3" disabled id="res" value="<?php echo $result;?>" name="ret">
         <div class="w-3/12">
