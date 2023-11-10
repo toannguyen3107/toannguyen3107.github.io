@@ -5,7 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Phan 1 - bai 5</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script scr="./script.js"></script>
+    <script>
+        function handler(e) {
+    const resultInput = document.getElementById('res');
+    const currentValue = resultInput.value;
+    console.log(e.currentTarget.value);
+    resultInput.value = currentValue === '0' ? e.target.value : currentValue + e.target.value;
+}
+
+    </script>
 </head>
 <body>
     <?php
