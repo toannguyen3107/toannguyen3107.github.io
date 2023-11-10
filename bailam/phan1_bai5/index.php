@@ -18,10 +18,7 @@
         resultInput.value = currentValue === '0' ? e.target.value : currentValue + ' ' + e.target.value;
     }
 }
-
-    
-}
-    </script>
+</script>
 </head>
 <body>
 <?php
