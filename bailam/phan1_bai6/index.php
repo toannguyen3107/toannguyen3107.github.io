@@ -46,7 +46,15 @@
                 ?>
                 </select>
                 <label for="month">Month</label>
-                <select name="month" id="month" class="me-3 selectField"></select>
+                <select name="month" id="month" class="me-3 selectField">
+                <?php
+                    $months = array("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December");
+                    $len = count($months);
+                    for($month = 1; $month <= 12 ; $month++){
+                        echo "<option value=\"$month\">".$months[$month-1]."</option>";
+                    }
+                ?>
+                </select>
                 <label for="year">Year</label>
                 <select name="year" id="year" class="me-3 selectField"></select>
             </div>
