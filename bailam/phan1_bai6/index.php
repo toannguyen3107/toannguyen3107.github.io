@@ -12,15 +12,18 @@
 <body>
     <?php 
         function checkFirstName(){
-            if (isset($_POST['fname'])){
-                $fname = $_POST['fname'];
-                $len = strlen($fname);
-                if($len < 2 || $len > 30 ){
-                    echo "<div class=\"text-danger class form-text\" id=\"fnameHelp\">The length of name must be greater than 2 and lower than 30!</div>";
+            if($_SERVER['REQUEST_METHOD'] == 'POST'){
+                if (isset($_POST['fname'])){
+                    $fname = $_POST['fname'];
+                    $len = strlen($fname);
+                    if($len < 2 || $len > 30 ){
+                        echo "<div class=\"text-danger class form-text\" id=\"fnameHelp\">The length of name must be greater than 2 and lower than 30!</div>";
+                    }
+                }else{
+                    echo "<div class=\"text-danger class form-text\" id=\"fnameHelp\">You can't blank in the field</div>";
                 }
-            }else{
-                echo "<div class=\"text-danger class form-text\" id=\"fnameHelp\">You cant blank in the field</div>";
             }
+            
         }
     ?>
 
