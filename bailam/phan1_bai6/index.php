@@ -15,7 +15,7 @@
             if (isset($_GET['fname'])){
                 $fname = $_GET['fname'];
                 $len = strlen($fname);
-                if($len <2 || $len >30 ){
+                if($len < 2 || $len > 30 ){
                     echo "<div class=\"text-danger class form-text\" id=\"fnameHelp\">The length of name must be greater than 2 and lower than 30!</div>";
                 }
             }else{
@@ -117,7 +117,7 @@
                 <label for="about">Comments</label>
             </div>
             <div class="mt-3">
-                <input class="btn btn-primary me-4" type="button" id="submit" value="Submit">
+                <input class="btn btn-primary me-4" type="submit" id="submit" value="Submit">
                 <input class="btn btn-danger" id="reset" type="button" value="Reset">
             </div>
         </form>
