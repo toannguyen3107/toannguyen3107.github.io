@@ -28,7 +28,8 @@
                 ?>>
                 <label for="fname">First Name</label>
                 <?php 
-                   $flag = $flag && checkFirstName();
+                    $flag_a = checkFirstName()
+                   $flag = $flag && $flag_a;
                 ?>
             </div>
             <!-- lastname -->
@@ -39,7 +40,10 @@
                 }
                 ?>>
                 <label for="lname">Last Name</label>
-                <?php $flag = $flag && checkLastName();?>
+                <?php 
+                $flag_a = checkLastname();
+                $flag = $flag && $flag_a;
+                ?>
             </div>
             <!-- email -->
             <div class="form-floating mt-3">
@@ -49,7 +53,10 @@
                 }
                 ?>>
                 <label for="email">Email</label>
-                <?php $flag = $flag && checkEmail();?>
+                <?php 
+                    $flag_a = checkEmail();
+                    $flag = $flag && $flag_a;
+                ?>
             </div>
             <!-- password -->
             <div class="form-floating mt-3">
@@ -59,7 +66,10 @@
                 }
                 ?>>
                 <label for="password">Password</label>
-                <?php $flag = $flag && checkPassword();?>
+                <?php 
+                    $flag_a = checkPassword();
+                    $flag = $flag && $flag_a;
+                ?>
             </div>
             <!-- Birthday -->
             <div id="birthday">
@@ -119,7 +129,10 @@
                     <option value="other">Other</option>
                 </select>
                 <label for="gender">Gender</label>
-                <?php $flag = $flag && checkGender();?>
+                <?php 
+                    $flag_a = checkGender();
+                    $flag = $flag && $flag_a;
+                ?>
             </div>
             <!-- Country -->
             <div class="form-floating mt-3">
@@ -135,7 +148,10 @@
                     <option value="other">Other</option>
                 </select>
                 <label for="country">Country</label>
-                <?php $flag = $flag && checkCountry();?>
+                <?php
+                    $flag_a = checkCountry();
+                    $flag = $flag && $flag_a;
+                ?>
             </div>
             <!-- About -->
             <div class="form-floating mt-3">
