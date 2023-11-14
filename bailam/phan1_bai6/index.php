@@ -40,7 +40,7 @@
             </div>
             <!-- email -->
             <div class="form-floating mt-3">
-                <input type="text" class="form-control" id="email" placeholder="name@example.com" name="email" <?php if(isset($_POST['emailHelp'])){
+                <input type="text" class="form-control" id="email" placeholder="name@example.com" name="email" <?php if(isset($_POST['email'])){
                     echo 'aria-describedby="emailHelp"';
                 }
                 ?>>
@@ -49,8 +49,12 @@
             </div>
             <!-- password -->
             <div class="form-floating mt-3">
-                <input type="password" class="form-control" id="password" placeholder="*******" autocomplete="on" name="password">
+                <input type="password" class="form-control" id="password" placeholder="*******" autocomplete="on" name="password" <?php if(isset($_POST['password'])){
+                    echo 'aria-describedby="passwordHelp"';
+                }
+                ?>>
                 <label for="password">Password</label>
+                <?php checkPassword();?>
             </div>
             <!-- Birthday -->
             <div id="birthday">

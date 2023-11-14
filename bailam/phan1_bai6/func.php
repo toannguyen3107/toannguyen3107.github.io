@@ -70,4 +70,21 @@ function checkLastName() {
         }
     }
 ?>
-      
+<?php
+    function checkPassword(){
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            if (isset($_POST['password'])) {
+                $password = $_POST['password'];
+                $len = strlen($password);
+                $mess = '';
+        
+                if ($len < 2 || $len > 30) {
+                    $mess = "<div class=\"text-danger class form-text\" id=\"lnameHelp\">The length of the name must be greater than 2 and less than 30!</div>";
+                }
+                if ($mess !== '') {
+                        echo $mess;
+                    }
+                }
+            }
+    }
+?>
