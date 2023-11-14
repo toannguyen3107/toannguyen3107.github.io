@@ -56,7 +56,14 @@
                 ?>
                 </select>
                 <label for="year">Year</label>
-                <select name="year" id="year" class="me-3 selectField"></select>
+                <select name="year" id="year" class="me-3 selectField">
+                    <?php
+                    $year = getdate()[year];
+                    for($y ; $y > 1900; $y--){
+                        echo "<option value=\"$y\">".$y."</option>";
+                    }
+                    ?>
+                </select>
             </div>
 
 
