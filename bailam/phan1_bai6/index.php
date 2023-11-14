@@ -22,6 +22,7 @@
             <div class="form-floating ">
                 <input type="text" class="form-control" id="fname" placeholder="Robbert" name="fname" <?php if(isset($_POST['fname'])){
                     echo 'aria-describedby="fnameHelp"';
+                    echo 'value="'.$_POST['fname'].'"';
                 }
                 ?>>
                 <label for="fname">First Name</label>
@@ -33,6 +34,7 @@
             <div class="form-floating mt-3">
                 <input type="text" class="form-control" id="lname" placeholder="John" name="lname" <?php if(isset($_POST['lname'])){
                     echo 'aria-describedby="lnameHelp"';
+                    echo 'value="'.$_POST['lname'].'"';
                 }
                 ?>>
                 <label for="lname">Last Name</label>
@@ -42,6 +44,7 @@
             <div class="form-floating mt-3">
                 <input type="text" class="form-control" id="email" placeholder="name@example.com" name="email" <?php if(isset($_POST['email'])){
                     echo 'aria-describedby="emailHelp"';
+                    echo 'value="'.$_POST['email'].'"';
                 }
                 ?>>
                 <label for="email">Email</label>
@@ -51,6 +54,7 @@
             <div class="form-floating mt-3">
                 <input type="password" class="form-control" id="password" placeholder="*******" autocomplete="on" name="password" <?php if(isset($_POST['password'])){
                     echo 'aria-describedby="passwordHelp"';
+                    echo 'value="'.$_POST['password'].'"';
                 }
                 ?>>
                 <label for="password">Password</label>
@@ -60,7 +64,11 @@
             <div id="birthday">
                 <label for="day">Birthday</label> <br>
                 <label for="day" class="mt-2">Day</label>
-                <select name="day" id="day" class="me-3 selectField">
+                <select name="day" id="day" class="me-3 selectField" <?php
+                    if(isset($_POST['day'])){
+                        echo 'value="'.$_POST['day'].'"';
+                    }
+                ?>>
                 <?php
                     for($day= 1; $day<=31; $day ++){
                         echo "<option value=\"$day\">".$day."</option>";
@@ -68,7 +76,11 @@
                 ?>
                 </select>
                 <label for="month">Month</label>
-                <select name="month" id="month" class="me-3 selectField">
+                <select name="month" id="month" class="me-3 selectField" <?php
+                    if(isset($_POST['month'])){
+                        echo 'value="'.$_POST['month'].'"';
+                    }
+                ?>>
                 <?php
                     $months = array("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December");
                     $len = count($months);
@@ -78,7 +90,11 @@
                 ?>
                 </select>
                 <label for="year">Year</label>
-                <select name="year" id="year" class="me-3 selectField">
+                <select name="year" id="year" class="me-3 selectField" <?php
+                    if(isset($_POST['year'])){
+                        echo 'value="'.$_POST['year'].'"';
+                    }
+                ?>>
                     <?php
                     $currDate = getdate();
                     $year = $currDate['year'];
@@ -94,6 +110,7 @@
             <div class="form-floating mt-3">
                 <select name="gender" class="form-select" id="gender" aria-label="Floating label select example" <?php if(isset($_POST['gender'])){
                     echo 'aria-describedby="genderHelp"';
+                    echo 'value="'.$_POST['gender'].'"';
                 }
                 ?>>
                     <option selected value="default">Open this select menu</option>
@@ -108,6 +125,7 @@
             <div class="form-floating mt-3">
                 <select name="country" class="form-select" id="country" aria-label="Floating label select example" <?php if(isset($_POST['country'])){
                     echo 'aria-describedby="countryHelp"';
+                    echo 'value="'.$_POST['country'].'"';
                 }
                 ?>>
                     <option selected value="default">Open this select menu</option>
