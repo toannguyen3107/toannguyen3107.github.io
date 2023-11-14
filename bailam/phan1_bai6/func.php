@@ -58,7 +58,7 @@ function checkLastName() {
                     $mess = "<div class=\"text-danger class form-text\" id=\"emailHelp\">This field can't blank!</div>";
                 }else{
                     $regex = "/^[a-zA-Z0-9]+(\.[a-zA-Z0-9]+)?@[a-zA-Z0-9]+\.[a-zA-Z0-9]+$/";
-                    if (preg_match($regex, $email)){
+                    if (!preg_match($regex, $email)){
                         $mess = "<div class=\"text-danger class form-text\" id=\"emailHelp\">Error: Invalid email address syntax. Please enter a valid email address like <i>&lt;sth&gt;@&lt;sth&gt;.&lt;sth&gt;</i></div>";
                     }
                 }
