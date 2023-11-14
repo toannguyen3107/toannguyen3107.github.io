@@ -147,7 +147,7 @@
                     echo 'aria-describedby="statusHelp"';
                 }
                 ?>>
-            <?
+            <?php
                 if($_SERVER['REQUEST_SELF'] === 'POST'){
                     if($flag){
                         echo "<div class=\"text-success class form-text\" id=\"statusHelp\">Complete!</div>";
