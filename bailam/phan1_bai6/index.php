@@ -28,7 +28,7 @@
                 ?>>
                 <label for="fname">First Name</label>
                 <?php 
-                    $flag_a = checkFirstName()
+                    $flag_a = checkFirstName();
                    $flag = $flag && $flag_a;
                 ?>
             </div>
