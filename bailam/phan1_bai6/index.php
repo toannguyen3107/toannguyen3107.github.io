@@ -16,14 +16,19 @@
                 if (isset($_POST['fname'])){
                     $fname = $_POST['fname'];
                     $len = strlen($fname);
+                    $mess = '';
                     if($len < 2 || $len > 30 ){
-                        echo "<div class=\"text-danger class form-text\" id=\"fnameHelp\">The length of name must be greater than 2 and lower than 30!</div>";
+                        $mess = "<div class=\"text-danger class form-text\" id=\"fnameHelp\">The length of name must be greater than 2 and lower than 30!</div>";
                     }
-                }else{
-                    echo "<div class=\"text-danger class form-text\" id=\"fnameHelp\">You can't blank in the field</div>";
+                    const regex = "/^[a-zA-Z]+[' -]{0,1}[a-zA-Z]/";
+                    if(!preg_match($regex, $fname)){
+                        $mess = "<div class=\"text-danger class form-text\" id=\"fnameHelp\">Error</div>"
+                    }
+                    if($mess !== ''){
+                        echo $mess;
+                    }
                 }
             }
-            
         }
     ?>
 
