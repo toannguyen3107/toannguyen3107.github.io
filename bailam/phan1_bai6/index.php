@@ -36,7 +36,7 @@
                 }
                 ?>>
                 <label for="lname">Last Name</label>
-                <?php checkLastname()?>
+                <?php checkLastName()?>
             </div>
             <!-- email -->
             <div class="form-floating mt-3">

@@ -79,7 +79,7 @@ function checkLastName() {
                 $mess = '';
         
                 if ($len < 2 || $len > 30) {
-                    $mess = "<div class=\"text-danger class form-text\" id=\"lnameHelp\">The length of the name must be greater than 2 and less than 30!</div>";
+                    $mess = "<div class=\"text-danger class form-text\" id=\"passwordHelp\">The length of the name must be greater than 2 and less than 30!</div>";
                 }
                 if ($mess !== '') {
                         echo $mess;
@@ -97,7 +97,7 @@ function checkLastName() {
                 $mess = '';
         
                 if($gender === 'default'){
-                    $mess = "<div class=\"text-danger class form-text\" id=\"lnameHelp\">You need to select your gender!</div>";
+                    $mess = "<div class=\"text-danger class form-text\" id=\"genderHelp\">You need to select your gender!</div>";
                 }
                 if ($mess !== '') {
                         echo $mess;
@@ -113,8 +113,8 @@ function checkLastName() {
                 $len = strlen($country);
                 $mess = '';
         
-                if($gender === 'default'){
-                    $mess = "<div class=\"text-danger class form-text\" id=\"lnameHelp\">You need to select your Country!</div>";
+                if($country === 'default'){
+                    $mess = "<div class=\"text-danger class form-text\" id=\"countryHelp\">You need to select your Country!</div>";
                 }
                 if ($mess !== '') {
                         echo $mess;
