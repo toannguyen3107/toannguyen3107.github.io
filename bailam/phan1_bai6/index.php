@@ -12,8 +12,8 @@
 <body>
     <?php 
         function checkFirstName(){
-            if (isset($_GET['fname'])){
-                $fname = $_GET['fname'];
+            if (isset($_POST['fname'])){
+                $fname = $_POST['fname'];
                 $len = strlen($fname);
                 if($len < 2 || $len > 30 ){
                     echo "<div class=\"text-danger class form-text\" id=\"fnameHelp\">The length of name must be greater than 2 and lower than 30!</div>";
@@ -27,10 +27,10 @@
     <div class="mt-2 mx-auto d-flex flex-column align-items-center justify-content-center w-50 rounded-5 pb-3"
         style="border: 2px solid black; background-color: #eaeaea;">
         <h3 class="ms-3 mt-2" style="font-weight: 600;"><i>Sign Up Account</i></h3>
-        <form action="<?php echo $_SERVER['PHP_SELF'];?>" name="signup" class="ms-3" id="signup" method="get">
+        <form action="<?php echo $_SERVER['PHP_SELF'];?>" name="signup" class="ms-3" id="signup" method="post">
             <!-- firstname -->
             <div class="form-floating ">
-                <input type="text" class="form-control" id="fname" placeholder="Robbert" name="fname" <?php if(isset($_GET['fname'])){
+                <input type="text" class="form-control" id="fname" placeholder="Robbert" name="fname" <?php if(isset($_POST['fname'])){
                     echo 'aria-describedby="fnameHelp"';
                 }
                 ?>>
