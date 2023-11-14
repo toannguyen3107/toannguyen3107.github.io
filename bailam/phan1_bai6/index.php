@@ -59,7 +59,7 @@
                 <select name="year" id="year" class="me-3 selectField">
                     <?php
                     $currDate = getdate();
-                    $year = $currDate[year];
+                    $year = $currDate['year'];
                     for($y = $year; $y > 1900; $y--){
                         echo "<option value=\"$y\">".$y."</option>";
                     }
