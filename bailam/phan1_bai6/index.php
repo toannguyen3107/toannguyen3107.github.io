@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./module/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
@@ -81,35 +81,6 @@
         </form>
     </div>
 
-    <script src="script.js"></script>
-    <script>
-        let daySelect = document.getElementById('day');
-        for (let day = 1; day <= 31; day++) {
-            const opt = document.createElement('option');
-            opt.value = day;
-            opt.text = day;
-            daySelect.appendChild(opt);
-        }
-
-        const monthSelect = document.getElementById('month');
-        const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-        for (let month = 0; month < 12; month++) {
-            const opt = document.createElement('option');
-            opt.value = month+1;
-            opt.text = months[month];
-            monthSelect.appendChild(opt);
-        }
-
-        let yearSelect = document.getElementById('year');
-        let currYear = new Date().getFullYear();
-        for (let year = currYear; year >= 1900; year--) {
-            const opt = document.createElement('option');
-            opt.value = year;
-            opt.text = year;
-            yearSelect.appendChild(opt);
-        }
-
-    </script>
 </body>
 
 </html>
