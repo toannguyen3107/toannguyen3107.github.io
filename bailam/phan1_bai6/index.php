@@ -151,6 +151,8 @@
                 if($_SERVER['REQUEST_SELF'] === 'POST'){
                     if($flag){
                         echo "<div class=\"text-success class=\"form-text\" id=\"statusHelp\">Complete!</div>";
+                    }else{
+                        echo "<div class=\"text-danger class=\"form-text\" id=\"statusHelp\">Have Problem in this form!</div>";
                     }
                 }
             ?>
