@@ -40,8 +40,12 @@
             </div>
             <!-- email -->
             <div class="form-floating mt-3">
-                <input type="text" class="form-control" id="email" placeholder="name@example.com" name="email">
+                <input type="text" class="form-control" id="email" placeholder="name@example.com" name="email" <?php if(isset($_POST['emailHelp'])){
+                    echo 'aria-describedby="emailHelp"';
+                }
+                ?>>
                 <label for="email">Email</label>
+                <?php checkEmail();?>
             </div>
             <!-- password -->
             <div class="form-floating mt-3">

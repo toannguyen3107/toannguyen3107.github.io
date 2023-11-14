@@ -45,4 +45,24 @@ function checkLastName() {
         }
 }
 ?>
+
+<?php 
+    function checkEmail(){
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            if (isset($_POST['email'])) {
+                $email = $_POST['email'];
+                $len = strlen($email);
+                $mess = '';
+        
+                if($len == 0){
+                    $mess = "<div class=\"text-danger class form-text\" id=\"emailHelp\">The length of the name must be greater than 2 and less than 30!</div>";
+                }
+
+                if ($mess !== '') {
+                        echo $mess;
+                    }
+                }
+        }
+    }
+?>
       
