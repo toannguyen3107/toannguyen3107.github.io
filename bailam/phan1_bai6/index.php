@@ -10,28 +10,48 @@
 </head>
 
 <body>
+    <?php 
+        function checkFirstName(){
+            if (isset($_GET['fname'])){
+                $fname = $_GET['fname'];
+                $len = strlen($fname);
+                if($len <2 || $len >30 ){
+                    echo "<div class=\"text-danger class form-text\" id=\"fnameHelp\">The length of name must be greater than 2 and lower than 30!</div>";
+                }
+            }else{
+                echo "<div class=\"text-danger class form-text\" id=\"fnameHelp\">You cant blank in the field</div>";
+            }
+        }
+    ?>
+
     <div class="mt-2 mx-auto d-flex flex-column align-items-center justify-content-center w-50 rounded-5 pb-3"
         style="border: 2px solid black; background-color: #eaeaea;">
         <h3 class="ms-3 mt-2" style="font-weight: 600;"><i>Sign Up Account</i></h3>
-        <form action="#" name="signup" class="ms-3" id="signup">
+        <form action="<?php echo $_SERVER['PHP_SELF'];?>" name="signup" class="ms-3" id="signup" method="get">
             <!-- firstname -->
             <div class="form-floating ">
-                <input type="text" class="form-control" id="fname" placeholder="Robbert">
+                <input type="text" class="form-control" id="fname" placeholder="Robbert" name="fname" <?php if(isset($_GET['fname'])){
+                    echo 'aria-describedby="fnameHelp"';
+                }
+                ?>>
                 <label for="fname">First Name</label>
+                <?php 
+                    checkFirstName();
+                ?>
             </div>
             <!-- lastname -->
             <div class="form-floating mt-3">
-                <input type="text" class="form-control" id="lname" placeholder="John">
+                <input type="text" class="form-control" id="lname" placeholder="John" name="lname">
                 <label for="lname">Last Name</label>
             </div>
             <!-- email -->
             <div class="form-floating mt-3">
-                <input type="text" class="form-control" id="email" placeholder="name@example.com">
+                <input type="text" class="form-control" id="email" placeholder="name@example.com" name="email">
                 <label for="email">Email</label>
             </div>
             <!-- password -->
             <div class="form-floating mt-3">
-                <input type="password" class="form-control" id="password" placeholder="*******" autocomplete="on">
+                <input type="password" class="form-control" id="password" placeholder="*******" autocomplete="on" name="password">
                 <label for="password">Password</label>
             </div>
             <!-- Birthday -->
@@ -70,7 +90,7 @@
 
             <!-- Gender -->
             <div class="form-floating mt-3">
-                <select class="form-select" id="gender" aria-label="Floating label select example">
+                <select name="gender" class="form-select" id="gender" aria-label="Floating label select example">
                     <option selected value="default">Open this select menu</option>
                     <option value="male">Male</option>
                     <option value="fale">Female</option>
@@ -80,7 +100,7 @@
             </div>
             <!-- Country -->
             <div class="form-floating mt-3">
-                <select class="form-select" id="country" aria-label="Floating label select example">
+                <select name="country" class="form-select" id="country" aria-label="Floating label select example">
                     <option selected value="default">Open this select menu</option>
                     <option value="vietnam">Vietnam</option>
                     <option value="australia">Australia</option>
