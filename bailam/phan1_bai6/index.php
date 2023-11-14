@@ -124,7 +124,36 @@
             </div>
         </form>
     </div>
+    <script>
+        const yearSelect = document.getElementById('year');
+        const monthSelect = document.getElementById('month');
+        const daySelect = document.getElementById('day');
 
+        function isLeap(year) {
+            return (year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0);
+        }
+
+        function updateDays() {
+            const selectedYear = parseInt(yearSelect.value, 10);
+            const selectedMonth = parseInt(monthSelect.value, 10);
+            const daysInMonth = new Date(selectedYear, selectedMonth, 0).getDate();
+
+            // Clear existing options
+            daySelect.innerHTML = '';
+
+            // Populate days
+            for (let day = 1; day <= daysInMonth; day++) {
+                daySelect.options.add(new Option(day, day));
+            }
+        }
+
+        // Initial setup
+        updateDays();
+
+        // Event listeners
+        yearSelect.addEventListener('change', updateDays);
+        monthSelect.addEventListener('change', updateDays);
+    </script>
 </body>
 
 </html>
