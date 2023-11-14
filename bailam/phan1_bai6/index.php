@@ -31,8 +31,12 @@
             </div>
             <!-- lastname -->
             <div class="form-floating mt-3">
-                <input type="text" class="form-control" id="lname" placeholder="John" name="lname">
+                <input type="text" class="form-control" id="lname" placeholder="John" name="lname" <?php if(isset($_POST['lname'])){
+                    echo 'aria-describedby="lnameHelp"';
+                }
+                ?>>
                 <label for="lname">Last Name</label>
+                <?php checkLastname()?>
             </div>
             <!-- email -->
             <div class="form-floating mt-3">
