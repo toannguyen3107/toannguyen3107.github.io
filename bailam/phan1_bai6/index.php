@@ -106,7 +106,10 @@
             </div>
             <!-- Country -->
             <div class="form-floating mt-3">
-                <select name="country" class="form-select" id="country" aria-label="Floating label select example">
+                <select name="country" class="form-select" id="country" aria-label="Floating label select example" <?php if(isset($_POST['country'])){
+                    echo 'aria-describedby="countryHelp"';
+                }
+                ?>>
                     <option selected value="default">Open this select menu</option>
                     <option value="vietnam">Vietnam</option>
                     <option value="australia">Australia</option>
@@ -115,6 +118,7 @@
                     <option value="other">Other</option>
                 </select>
                 <label for="country">Country</label>
+                <?php checkCountry();?>
             </div>
             <!-- About -->
             <div class="form-floating mt-3">

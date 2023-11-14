@@ -105,7 +105,7 @@ function checkLastName() {
                 }
             }
     }
-    }
+
     function checkCountry(){
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             if (isset($_POST['country'])) {
@@ -122,5 +122,4 @@ function checkLastName() {
                 }
             }
         }
-    }
 ?>
