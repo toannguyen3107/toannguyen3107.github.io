@@ -40,8 +40,8 @@
                 <label for="day" class="mt-2">Day</label>
                 <select name="day" id="day" class="me-3 selectField">
                 <?php
-                    for($i = 1; $i <= 31; $++){
-                        echo '<option value="'.$i.'">'.$i."</option>";
+                    for($day= 1; $day<=31; $day ++){
+                        echo "<option value=\"$day\">".$day."</option>";
                     }
                 ?>
                 </select>
