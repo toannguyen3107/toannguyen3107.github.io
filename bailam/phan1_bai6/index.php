@@ -11,25 +11,29 @@
 
 <body>
     <?php 
-        function checkFirstName(){
-            if($_SERVER['REQUEST_METHOD'] == 'POST'){
-                if (isset($_POST['fname'])){
+        function checkFirstName() {
+            if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+                if (isset($_POST['fname'])) {
                     $fname = $_POST['fname'];
                     $len = strlen($fname);
                     $mess = '';
-                    if($len < 2 || $len > 30 ){
-                        $mess = "<div class=\"text-danger class form-text\" id=\"fnameHelp\">The length of name must be greater than 2 and lower than 30!</div>";
+        
+                    if ($len < 2 || $len > 30) {
+                        $mess = "<div class=\"text-danger class form-text\" id=\"fnameHelp\">The length of the name must be greater than 2 and less than 30!</div>";
                     }
-                    const regex = "/^[a-zA-Z]+[' -]{0,1}[a-zA-Z]+/";
-                    if(!preg_match($regex, $fname)){
-                        $mess = "<div class=\"text-danger class form-text\" id=\"fnameHelp\">Error</div>"
+        
+                    $regex = "/^[a-zA-Z]+[' -]{0,1}[a-zA-Z]+/";
+                    if (!preg_match($regex, $fname)) {
+                        $mess = "<div class=\"text-danger class form-text\" id=\"fnameHelp\">Error</div>";
                     }
-                    if($mess !== ''){
+        
+                    if ($mess !== '') {
                         echo $mess;
                     }
                 }
             }
         }
+        
     ?>
 
     <div class="mt-2 mx-auto d-flex flex-column align-items-center justify-content-center w-50 rounded-5 pb-3"
