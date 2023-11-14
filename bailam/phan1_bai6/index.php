@@ -20,7 +20,7 @@
                     if($len < 2 || $len > 30 ){
                         $mess = "<div class=\"text-danger class form-text\" id=\"fnameHelp\">The length of name must be greater than 2 and lower than 30!</div>";
                     }
-                    const regex = "/^[a-zA-Z]+[' -]{0,1}[a-zA-Z]/";
+                    const regex = "/^[a-zA-Z]+[' -]{0,1}[a-zA-Z]+/";
                     if(!preg_match($regex, $fname)){
                         $mess = "<div class=\"text-danger class form-text\" id=\"fnameHelp\">Error</div>"
                     }
