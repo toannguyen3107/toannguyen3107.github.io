@@ -7,11 +7,11 @@
                 $mess = '';
         
                 if ($len < 2 || $len > 30) {
-                    $mess = "<div class=\"text-danger class form-text\" id=\"fnameHelp\">The length of the name must be greater than 2 and less than 30!</div>";
+                    $mess = "<div class=\"text-danger class=\"form-text\" id=\"fnameHelp\">The length of the name must be greater than 2 and less than 30!</div>";
                 }else{
                     $regex = "/^[a-zA-Z]+[' -]?[a-zA-Z]*$/";
                     if (!preg_match($regex, $fname)) {
-                        $mess = "<div class=\"text-danger class form-text\" id=\"fnameHelp\">Error</div>";
+                        $mess = "<div class=\"text-danger class=\"form-text\" id=\"fnameHelp\">Error</div>";
                     }
                 }
                 if($mess !== '') {
@@ -33,11 +33,11 @@ function checkLastName() {
             $mess = '';
     
             if ($len < 2 || $len > 30) {
-                $mess = "<div class=\"text-danger class form-text\" id=\"lnameHelp\">The length of the name must be greater than 2 and less than 30!</div>";
+                $mess = "<div class=\"text-danger class=\"form-text\" id=\"lnameHelp\">The length of the name must be greater than 2 and less than 30!</div>";
             }else{
                 $regex = "/^[a-zA-Z]+[' -]?[a-zA-Z]*$/";
                 if (!preg_match($regex, $lname)) {
-                    $mess = "<div class=\"text-danger class form-text\" id=\"lnameHelp\">Error</div>";
+                    $mess = "<div class=\"text-danger class=\"form-text\" id=\"lnameHelp\">Error</div>";
                 }
             }
             if ($mess !== '') {
@@ -60,11 +60,11 @@ function checkLastName() {
                 $mess = '';
         
                 if($len == 0){
-                    $mess = "<div class=\"text-danger class form-text\" id=\"emailHelp\">This field can't blank!</div>";
+                    $mess = "<div class=\"text-danger class=\"form-text\" id=\"emailHelp\">This field can't blank!</div>";
                 }else{
                     $regex = "/^[a-zA-Z0-9]+(\.[a-zA-Z0-9]+)?@[a-zA-Z0-9]+\.[a-zA-Z0-9]+$/";
                     if (!preg_match($regex, $email)){
-                        $mess = "<div class=\"text-danger class form-text\" id=\"emailHelp\">Error: Invalid email address syntax. Please enter a valid email address like <i>&lt;sth&gt;@&lt;sth&gt;.&lt;sth&gt;</i></div>";
+                        $mess = "<div class=\"text-danger class=\"form-text\" id=\"emailHelp\">Error: Invalid email address syntax. Please enter a valid email address like <i>&lt;sth&gt;@&lt;sth&gt;.&lt;sth&gt;</i></div>";
                     }
                 }
 
@@ -86,7 +86,7 @@ function checkLastName() {
                 $mess = '';
         
                 if ($len < 2 || $len > 30) {
-                    $mess = "<div class=\"text-danger class form-text\" id=\"passwordHelp\">The length of the name must be greater than 2 and less than 30!</div>";
+                    $mess = "<div class=\"text-danger class=\"form-text\" id=\"passwordHelp\">The length of the name must be greater than 2 and less than 30!</div>";
                 }
                 if ($mess !== '') {
                         echo $mess;
@@ -106,7 +106,7 @@ function checkLastName() {
                 $mess = '';
         
                 if($gender === 'default'){
-                    $mess = "<div class=\"text-danger class form-text\" id=\"genderHelp\">You need to select your gender!</div>";
+                    $mess = "<div class=\"text-danger class=\"form-text\" id=\"genderHelp\">You need to select your gender!</div>";
                 }
                 if ($mess !== '') {
                         echo $mess;
@@ -125,7 +125,7 @@ function checkLastName() {
                 $mess = '';
         
                 if($country === 'default'){
-                    $mess = "<div class=\"text-danger class form-text\" id=\"countryHelp\">You need to select your Country!</div>";
+                    $mess = "<div class=\"text-danger class=\"form-text\" id=\"countryHelp\">You need to select your Country!</div>";
                 }
                 if ($mess !== '') {
                         echo $mess;
