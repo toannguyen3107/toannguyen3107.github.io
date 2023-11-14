@@ -89,5 +89,38 @@ function checkLastName() {
     }
 ?>
 <?php
-    
+    function checkGender(){
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            if (isset($_POST['gender'])) {
+                $gender = $_POST['gender'];
+                $len = strlen($gender);
+                $mess = '';
+        
+                if($gender === 'default'){
+                    $mess = "<div class=\"text-danger class form-text\" id=\"lnameHelp\">You need to select your gender!</div>";
+                }
+                if ($mess !== '') {
+                        echo $mess;
+                    }
+                }
+            }
+    }
+    }
+    function checkCountry(){
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            if (isset($_POST['country'])) {
+                $country = $_POST['country'];
+                $len = strlen($country);
+                $mess = '';
+        
+                if($gender === 'default'){
+                    $mess = "<div class=\"text-danger class form-text\" id=\"lnameHelp\">You need to select your Country!</div>";
+                }
+                if ($mess !== '') {
+                        echo $mess;
+                    }
+                }
+            }
+        }
+    }
 ?>

@@ -92,13 +92,17 @@
 
             <!-- Gender -->
             <div class="form-floating mt-3">
-                <select name="gender" class="form-select" id="gender" aria-label="Floating label select example">
+                <select name="gender" class="form-select" id="gender" aria-label="Floating label select example" <?php if(isset($_POST['gender'])){
+                    echo 'aria-describedby="genderHelp"';
+                }
+                ?>>
                     <option selected value="default">Open this select menu</option>
                     <option value="male">Male</option>
                     <option value="fale">Female</option>
                     <option value="other">Other</option>
                 </select>
                 <label for="gender">Gender</label>
+                <?php checkGender();?>
             </div>
             <!-- Country -->
             <div class="form-floating mt-3">
