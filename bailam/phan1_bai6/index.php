@@ -38,7 +38,13 @@
             <div id="birthday">
                 <label for="day">Birthday</label> <br>
                 <label for="day" class="mt-2">Day</label>
-                <select name="day" id="day" class="me-3 selectField"></select>
+                <select name="day" id="day" class="me-3 selectField">
+                <?php
+                    for($i = 1; $i <= 31; $++){
+                        echo "<option value=\"{$i}\">".$i."</option>";
+                    }
+                ?>
+                </select>
                 <label for="month">Month</label>
                 <select name="month" id="month" class="me-3 selectField"></select>
                 <label for="year">Year</label>
