@@ -10,7 +10,8 @@
 </head>
 
 <body>
-    <?php 
+    <?php
+        $flag = true;
         require_once('./func.php');
     ?>
 
@@ -27,7 +28,7 @@
                 ?>>
                 <label for="fname">First Name</label>
                 <?php 
-                    checkFirstName();
+                   $flag = $flag && checkFirstName();
                 ?>
             </div>
             <!-- lastname -->
@@ -38,7 +39,7 @@
                 }
                 ?>>
                 <label for="lname">Last Name</label>
-                <?php checkLastName()?>
+                <?php $flag = $flag && checkLastName();?>
             </div>
             <!-- email -->
             <div class="form-floating mt-3">
@@ -48,7 +49,7 @@
                 }
                 ?>>
                 <label for="email">Email</label>
-                <?php checkEmail();?>
+                <?php $flag = $flag && checkEmail();?>
             </div>
             <!-- password -->
             <div class="form-floating mt-3">
@@ -58,7 +59,7 @@
                 }
                 ?>>
                 <label for="password">Password</label>
-                <?php checkPassword();?>
+                <?php $flag = $flag && checkPassword();?>
             </div>
             <!-- Birthday -->
             <div id="birthday">
@@ -110,7 +111,6 @@
             <div class="form-floating mt-3">
                 <select name="gender" class="form-select" id="gender" aria-label="Floating label select example" <?php if(isset($_POST['gender'])){
                     echo 'aria-describedby="genderHelp"';
-                    echo 'value="'.$_POST['gender'].'"';
                 }
                 ?>>
                     <option selected value="default">Open this select menu</option>
@@ -119,13 +119,12 @@
                     <option value="other">Other</option>
                 </select>
                 <label for="gender">Gender</label>
-                <?php checkGender();?>
+                <?php $flag = $flag && checkGender();?>
             </div>
             <!-- Country -->
             <div class="form-floating mt-3">
                 <select name="country" class="form-select" id="country" aria-label="Floating label select example" <?php if(isset($_POST['country'])){
                     echo 'aria-describedby="countryHelp"';
-                    echo 'value="'.$_POST['country'].'"';
                 }
                 ?>>
                     <option selected value="default">Open this select menu</option>
@@ -136,7 +135,7 @@
                     <option value="other">Other</option>
                 </select>
                 <label for="country">Country</label>
-                <?php checkCountry();?>
+                <?php $flag = $flag && checkCountry();?>
             </div>
             <!-- About -->
             <div class="form-floating mt-3">
@@ -144,6 +143,17 @@
                     maxlength="10000"></textarea>
                 <label for="about">Comments</label>
             </div>
+            <input type="hidden" id="status" <?php if(isset($_POST['status'])){
+                    echo 'aria-describedby="statusHelp"';
+                }
+                ?>>
+            <?
+                if($_SERVER['REQUEST_SELF'] === 'POST'){
+                    if($flag){
+                        echo "<div class=\"text-success class form-text\" id=\"statusHelp\">Complete!</div>";
+                    }
+                }
+            ?>
             <div class="mt-3">
                 <input class="btn btn-primary me-4" type="submit" id="submit" value="Submit">
                 <input class="btn btn-danger" id="reset" type="button" value="Reset">

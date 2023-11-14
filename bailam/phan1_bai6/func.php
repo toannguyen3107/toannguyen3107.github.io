@@ -14,11 +14,13 @@
                         $mess = "<div class=\"text-danger class form-text\" id=\"fnameHelp\">Error</div>";
                     }
                 }
-                if ($mess !== '') {
+                if($mess !== '') {
                         echo $mess;
-                    }
+                        return false;
                 }
+                return true;
             }
+        }
     }
 ?>
 
@@ -40,9 +42,12 @@ function checkLastName() {
             }
             if ($mess !== '') {
                     echo $mess;
-                }
+                    return false;
             }
+        return true;
         }
+    }
+        
 }
 ?>
 
@@ -65,8 +70,10 @@ function checkLastName() {
 
                 if ($mess !== '') {
                         echo $mess;
+                        return false;
                     }
-                }
+                return true;
+            }
         }
     }
 ?>
@@ -83,9 +90,11 @@ function checkLastName() {
                 }
                 if ($mess !== '') {
                         echo $mess;
-                    }
+                        return false;
                 }
+                return true;
             }
+        }
     }
 ?>
 <?php
@@ -101,7 +110,9 @@ function checkLastName() {
                 }
                 if ($mess !== '') {
                         echo $mess;
+                        return false;
                     }
+                return true;
                 }
             }
     }
@@ -118,7 +129,9 @@ function checkLastName() {
                 }
                 if ($mess !== '') {
                         echo $mess;
-                    }
+                        return false;
+                }
+                return true;
                 }
             }
         }
