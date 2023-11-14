@@ -55,7 +55,12 @@ function checkLastName() {
                 $mess = '';
         
                 if($len == 0){
-                    $mess = "<div class=\"text-danger class form-text\" id=\"emailHelp\">The length of the name must be greater than 2 and less than 30!</div>";
+                    $mess = "<div class=\"text-danger class form-text\" id=\"emailHelp\">This field can't blank!</div>";
+                }else{
+                    $regex = "/^[a-zA-Z0-9]+(\.[a-zA-Z0-9]+)?@[a-zA-Z0-9]+\.[a-zA-Z0-9]+$/";
+                    if (preg_match($regex, $email)){
+                        $mess = "<div class=\"text-danger class form-text\" id=\"emailHelp\">Error syntax: &lt;sth&gt;@&lt;sth&gt;.&lt;sth&gt;</div>";
+                    }
                 }
 
                 if ($mess !== '') {
