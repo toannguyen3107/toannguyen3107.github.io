@@ -6,6 +6,7 @@ import type { Metadata } from "next";
 import { inner } from "@/config/fonts";
 export const metadata: Metadata = {
   title: 'Toan Nguyen',
+  icons: {icon: './favicon.ico'},
   openGraph: {
     title: 'Blog - Personal website',
     description: 'Toan Nguyen\'s blog'
