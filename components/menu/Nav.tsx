@@ -44,16 +44,19 @@ const Nav: React.FC<{ className?: string }> = ({ className }) => {
         <Link
           href="https://github.com/toannguyen3107"
           className="text-3xl hover:text-white"
+          isExternal
           color="success"
         ><FaGithub /></Link>
         <Link
           href=" javascript:location.href = 'mailto:' + ['minhtoanaglx','gmail.com'].join('@')" aria-label="email"
+          isExternal
           className="text-3xl  hover:text-white"
           color="success"
         ><IoIosMail /></Link>
         <Link
           href="https://facebook.com/nguyenminhtoan07"
           className="text-3xl hover:text-white"
+          isExternal
           color="success"
         ><FaFacebook /></Link>
       </div>
