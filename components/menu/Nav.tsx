@@ -2,7 +2,10 @@
 import React from "react";
 import { Avatar, Listbox, ListboxItem } from "@nextui-org/react";
 import { roboto } from "@/config/fonts";
-
+import { FaGithub } from "react-icons/fa";
+import { IoIosMail } from "react-icons/io";
+import { FaFacebook } from "react-icons/fa";
+import { Link } from "@nextui-org/react";
 type Key = string | number;
 
 const Nav: React.FC<{ className?: string }> = ({ className }) => {
@@ -17,7 +20,6 @@ const Nav: React.FC<{ className?: string }> = ({ className }) => {
     { key: "archives", label: "ARCHIVES" },
     { key: "about", label: "ABOUT" },
   ];
-
   return (
     <div className={`${className}`}>
       <div className="avt">
@@ -33,9 +35,30 @@ const Nav: React.FC<{ className?: string }> = ({ className }) => {
           className="mt-[3rem]"
         >
           {navigationLinks.map((link) => (
-            <ListboxItem className={`text-center mx-auto`} key={link.key}>{link.label}</ListboxItem>
+            <ListboxItem className={`mt-1 text-center mx-auto`} key={link.key}>{link.label}</ListboxItem>
           ))}
         </Listbox>
+      </div>
+
+      <div className="mx-auto footnav absolute bottom-10 left-[20%] flex flex-row gap-4">
+        <Link
+          href="https://github.com/toannguyen3107"
+          className="text-3xl hover:text-white"
+          isExternal
+          color="success"
+        ><FaGithub /></Link>
+        <Link
+          href=" javascript:location.href = 'mailto:' + ['minhtoanaglx','gmail.com'].join('@')" aria-label="email"
+          isExternal
+          className="text-3xl  hover:text-white"
+          color="success"
+        ><IoIosMail /></Link>
+        <Link
+          href="https://facebook.com/nguyenminhtoan07"
+          className="text-3xl hover:text-white"
+          isExternal
+          color="success"
+        ><FaFacebook /></Link>
       </div>
     </div>
   );
