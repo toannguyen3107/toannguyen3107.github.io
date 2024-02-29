@@ -40,7 +40,7 @@ const Nav: React.FC<{ className?: string }> = ({ className }) => {
         </Listbox>
       </div>
 
-      <div className="mx-auto footnav absolute bottom-10 left-[20%] flex flex-row gap-4">
+      <div className="mx-auto footnav bottom-10 left-[20%] flex flex-row gap-4 justify-center mt-[25vh]">
         <Link
           href="https://github.com/toannguyen3107"
           className="text-3xl hover:text-white"
