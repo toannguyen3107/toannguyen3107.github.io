@@ -22,10 +22,10 @@ const Nav: React.FC<{ className?: string }> = ({ className }) => {
   ];
   return (
     <div className={`${className}`}>
-      <div className="avt">
+      <div className="avt drop-shadow-xl contrast-150">
         <Avatar isBordered src="/toan.png" className="mt-[3rem] w-36 h-36 mx-auto" />
         <p className="mt-2 fw-extrabold text-2xl mx-auto w-[max-content] text-slate-100">Minh Toan</p>
-        <p className={`w-[max-content] mx-auto mt-1 text-slate-400 text-sm italic ${roboto.className}`}>learner - software - pentester</p>
+        <p className={`w-[max-content] mx-auto mt-1 text-slate-400 text-[0.65rem] italic ${roboto.className}`}>Software Engineering and Cybersecurity Enthusiast</p>
       </div>
 
       <div className="lst">
@@ -48,7 +48,7 @@ const Nav: React.FC<{ className?: string }> = ({ className }) => {
           color="success"
         ><FaGithub /></Link>
         <Link
-          href=" javascript:location.href = 'mailto:' + ['minhtoanaglx','gmail.com'].join('@')" aria-label="email"
+          href=" javascript:location.href = 'mailto:minhtoanaglx@mgail.com'" aria-label="email"
           isExternal
           className="text-3xl  hover:text-white"
           color="success"
