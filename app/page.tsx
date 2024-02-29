@@ -16,13 +16,13 @@ export default function App() {
           cursor={true}
           cursorBlinking={true}
           cursorColor="red"
-          cursorStyle={<span className="text-bold text-xl">*</span>}
+          cursorStyle={<span className="text-bold text-xl italic">|</span>}
           typeSpeed={50}
           deleteSpeed={10}
         />
       </span>
       
-      <p className="mt-[10rem]">Updating</p>
+      <p className="absolute top-[50vh] bottom-[50vh]">Updating</p>
     </div>
   );
 }
