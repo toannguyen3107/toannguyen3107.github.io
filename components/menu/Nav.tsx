@@ -21,11 +21,11 @@ const Nav: React.FC<{ className?: string }> = ({ className }) => {
     { key: "about", label: "ABOUT" },
   ];
   return (
-    <div className={`${className}`}>
+    <div className={`${className} relative`}>
       <div className="avt drop-shadow-xl contrast-150">
-        <Avatar isBordered src="/toan.png" className="mt-[3rem] w-36 h-36 mx-auto" />
-        <p className="mt-2 fw-extrabold text-2xl mx-auto w-[max-content] text-slate-100">Minh Toan</p>
-        <p className={`w-[max-content] mx-auto mt-1 text-slate-400 text-[0.65rem] italic ${roboto.className}`}>Software Engineering and Cybersecurity Enthusiast</p>
+        <Avatar isBordered src="/toan.png" className="mt-[3rem] w-[50%] h-[50%] mx-auto" />
+        <p className="mt-2 fw-extrabold text-sm md:text-xl lg:text-2xl mx-auto w-[max-content] text-slate-100">Minh Toan</p>
+        <p className={`text-center mx-auto mt-1 text-slate-400 text-[0.65rem] italic ${roboto.className}`}>Software Engineering and Cybersecurity Enthusiast</p>
       </div>
 
       <div className="lst">
@@ -40,7 +40,7 @@ const Nav: React.FC<{ className?: string }> = ({ className }) => {
         </Listbox>
       </div>
 
-      <div className="mx-auto footnav bottom-10 left-[20%] flex flex-row gap-4 justify-center mt-[25vh]">
+      <div className="absolute mx-auto footnav bottom-10 flex flex-row gap-4 justify-center bottom-[5%] left-[50%] right-[50%]">
         <Link
           href="https://github.com/toannguyen3107"
           className="text-3xl hover:text-white"

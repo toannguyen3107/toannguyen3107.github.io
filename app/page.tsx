@@ -11,7 +11,7 @@ export default function App() {
       <p className="font-extrabold text-3xl text-[#d8d8d8] blur-[0.1px] italic">Hello everyone</p>
       <span className="text-[#E91E63] font-semibold text-lg">
         <Typewriter
-          words={['Welcome to my blog', 'My name is Nguyen Minh Toan', 'This blog shares my knowledge within the realms of learning about software engineering and cybersecurity, focusing mainly on penetration testing.']}
+          words={['Welcome to my blog.', 'My name is Nguyen Minh Toan.', 'This blog shares my knowledge within the realms of learning about software engineering and cybersecurity, focusing mainly on penetration testing.']}
           loop={true}
           cursor={true}
           cursorBlinking={true}
