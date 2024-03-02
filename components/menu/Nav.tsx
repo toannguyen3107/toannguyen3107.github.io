@@ -17,10 +17,10 @@ const Nav: React.FC<{ className?: string }> = ({ className }) => {
   };
   const lst = "absolute w-[max-content] p-[1rem] top-[10%] bg-slate-500 h-[max-content] right-[10%] z-50 rounded-[1rem]";
   useEffect(() => {
-      if (window.screen.width > 768){
-        setMenuVisible(false);
-      }
-  }, [window.screen.width]);
+    if (typeof window !== 'undefined' && window.screen.width > 768) {
+      setMenuVisible(false);
+    }
+  }, []);
   const [menuVisible, setMenuVisible] = useState<boolean>(false);
   const handleMenu = () => {
     setMenuVisible(!menuVisible);
