@@ -1,18 +1,30 @@
 'use client'
-import React from "react";
+import React, { useEffect } from "react";
 import { Avatar, Listbox, ListboxItem } from "@nextui-org/react";
 import { roboto } from "@/config/fonts";
 import { FaGithub } from "react-icons/fa";
 import { IoIosMail } from "react-icons/io";
 import { FaFacebook } from "react-icons/fa";
 import { Link } from "@nextui-org/react";
+import { GiHamburgerMenu } from "react-icons/gi";
+import { useState } from "react";
+
 type Key = string | number;
 
 const Nav: React.FC<{ className?: string }> = ({ className }) => {
   const handleNavigation = (key: Key) => {
     alert(key);
   };
-
+  const lst = "absolute w-[max-content] p-[1rem] top-[10%] bg-slate-500 h-[max-content] right-[10%] z-50 rounded-[1rem]";
+  useEffect(() => {
+      if (window.screen.width > 768){
+        setMenuVisible(false);
+      }
+  }, [window.screen.width]);
+  const [menuVisible, setMenuVisible] = useState<boolean>(false);
+  const handleMenu = () => {
+    setMenuVisible(!menuVisible);
+  }
   const navigationLinks = [
     { key: "home", label: "HOME" },
     { key: "categories", label: "CATEGORIES" },
@@ -21,26 +33,29 @@ const Nav: React.FC<{ className?: string }> = ({ className }) => {
     { key: "about", label: "ABOUT" },
   ];
   return (
-    <div className={`${className} relative`}>
-      <div className="avt drop-shadow-xl contrast-150">
-        <Avatar isBordered src="/toan.png" className="mt-[3rem] w-[50%] h-[50%] mx-auto" />
+    <div className={`${className} relative md:block grid grid-cols-12 grid-rows-12 gap-4`}>
+      <div className="avt drop-shadow-xl contrast-150 col-span-6 row-span-12">
+        <Avatar isBordered src="/toan.png" className="mt-[3rem] w-[5rem] h-[5rem] md:w-[50%] md:h-[50%] mx-auto" />
         <p className="mt-2 fw-extrabold text-sm md:text-xl lg:text-2xl mx-auto w-[max-content] text-slate-100">Minh Toan</p>
         <p className={`text-center mx-auto mt-1 text-slate-400 text-[0.65rem] italic ${roboto.className}`}>Software Engineering and Cybersecurity Enthusiast</p>
       </div>
+      <GiHamburgerMenu
+        className="block md:hidden my-auto col-span-6 row-span-6 m-auto font-bold text-xl hover:text-white active:text-red-500"
+        onClick={handleMenu}
+      />
 
-      <div className="lst">
         <Listbox
           aria-label="Actions"
           onAction={handleNavigation}
-          className="mt-[3rem]"
+          className={`mt-[3rem] ${menuVisible? lst : ''}`}
         >
           {navigationLinks.map((link) => (
             <ListboxItem className={`mt-1 text-center mx-auto`} key={link.key}>{link.label}</ListboxItem>
           ))}
         </Listbox>
-      </div>
 
-      <div className="absolute mx-auto footnav bottom-10 flex flex-row gap-4 justify-center bottom-[5%] left-[50%] right-[50%]">
+
+      <div className="block md:absolute m-auto md:mx-auto footnav bottom-10 flex items-center flex-row gap-4 justify-center bottom-[5%] left-[50%] right-[50%]">
         <Link
           href="https://github.com/toannguyen3107"
           className="text-3xl hover:text-white"
@@ -48,9 +63,10 @@ const Nav: React.FC<{ className?: string }> = ({ className }) => {
           color="success"
         ><FaGithub /></Link>
         <Link
-          href=" javascript:location.href = 'mailto:minhtoanaglx@mgail.com'" aria-label="email"
+          href="mailto:minhtoanaglx@gmail.com"
+          aria-label="email"
           isExternal
-          className="text-3xl  hover:text-white"
+          className="text-3xl hover:text-white"
           color="success"
         ><IoIosMail /></Link>
         <Link
