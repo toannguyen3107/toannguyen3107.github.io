@@ -9,12 +9,17 @@ import { Link } from "@nextui-org/react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { useState } from "react";
 
-type Key = string | number;
+import { useRouter } from "next/navigation";
+
 
 const Nav: React.FC<{ className?: string }> = ({ className }) => {
-  const handleNavigation = (key: Key) => {
-    alert(key);
+  
+  const router = useRouter();
+  
+  const handleNavigation = (link: string) => () => {
+    router.push(link);
   };
+
   const lst = "absolute w-[max-content] p-[1rem] top-[10%] bg-slate-500 h-[max-content] right-[10%] z-50 rounded-[1rem]";
   useEffect(() => {
     if (typeof window !== 'undefined' && window.screen.width > 768) {
@@ -26,11 +31,11 @@ const Nav: React.FC<{ className?: string }> = ({ className }) => {
     setMenuVisible(!menuVisible);
   }
   const navigationLinks = [
-    { key: "home", label: "HOME" },
-    { key: "categories", label: "CATEGORIES" },
-    { key: "tags", label: "TAGS" },
-    { key: "archives", label: "ARCHIVES" },
-    { key: "about", label: "ABOUT" },
+    { key: "home", label: "HOME", link: '/' },
+    { key: "categories", label: "CATEGORIES", link: '/categories' },
+    { key: "tags", label: "TAGS", link: '/tags' },
+    { key: "posts", label: "POSTS", link: '/posts' },
+    { key: "about", label: "ABOUT", link: '/about' },
   ];
   return (
     <div className={`${className} relative md:block grid grid-cols-12 grid-rows-12 gap-4`}>
@@ -44,15 +49,18 @@ const Nav: React.FC<{ className?: string }> = ({ className }) => {
         onClick={handleMenu}
       />
 
-        <Listbox
-          aria-label="Actions"
-          onAction={handleNavigation}
-          className={`mt-[3rem] ${menuVisible? lst : ''}`}
-        >
-          {navigationLinks.map((link) => (
-            <ListboxItem className={`mt-1 text-center mx-auto`} key={link.key}>{link.label}</ListboxItem>
-          ))}
-        </Listbox>
+      <Listbox
+        aria-label="Actions"
+        // onAction={handleNavigation}
+        className={`mt-[3rem] ${menuVisible ? lst : ''}`}
+      >
+        {navigationLinks.map((link) => (
+            <ListboxItem
+            onClick={handleNavigation(link.link)} 
+            className={`mt-1 text-center mx-auto`} 
+            key={link.key}>{link.label}</ListboxItem>
+        ))}
+      </Listbox>
 
 
       <div className="block md:absolute m-auto md:mx-auto footnav bottom-10 flex items-center flex-row gap-4 justify-center bottom-[5%] left-[50%] right-[50%]">
