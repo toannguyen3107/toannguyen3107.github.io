@@ -15,7 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
-      url: 'https://acme.com/posts',
+      url: 'https://toannguyen3107.github.io/posts',
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 0.5,
