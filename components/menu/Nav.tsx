@@ -34,7 +34,7 @@ const Nav: React.FC<{ className?: string }> = ({ className }) => {
     { key: "home", label: "HOME", link: '/' },
     { key: "categories", label: "CATEGORIES", link: '/categories' },
     { key: "tags", label: "TAGS", link: '/tags' },
-    { key: "posts", label: "POSTS", link: '/posts' },
+    { key: "posts", label: "BLOG", link: '/posts' },
     { key: "about", label: "ABOUT", link: '/about' },
   ];
   return (
