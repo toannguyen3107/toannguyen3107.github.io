@@ -23,20 +23,26 @@ const CardButton: React.FC<CardButtonProps> = ({ item }) => {
   };
 
   return (
-    <div onClick={() => handleClick(item.link)} style={{ cursor: 'pointer' }} className={item.className}>
-      <Card className="py-4 bg-[#52525B] border-2 hover:bg-[#71717A] active:bg-[#27272A]">
+    <div 
+      onClick={() => handleClick(item.link)} 
+      style={{ cursor: 'pointer', display: 'flex', justifyContent: 'center', alignItems: 'center' }} 
+      className={item.className}
+    >
+      <Card className="py-4 bg-[#52525B] border-2 hover:bg-[#71717A] active:bg-[#27272A] w-[200px]">
         <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
-          <p className="text-tiny uppercase font-bold">{item.subtitle}</p>
-          <small className="text-default-500">{item.date}</small>
-          <h4 className="font-bold text-large">{item.header}</h4>
+          <p className="text-tiny uppercase font-bold mx-auto">{item.subtitle}</p>
+          <small className="text-default-500 mx-auto">{item.date}</small>
+          <h4 className="font-bold text-large mx-auto">{item.header}</h4>
         </CardHeader>
         <CardBody className="overflow-visible py-2">
-          <Image
-            alt="Card background"
-            className="object-cover rounded-xl"
-            src={item.img}
-            width={150}
-          />
+          <div style={{ display: 'flex', justifyContent: 'center' }}>
+            <Image
+              alt="Card background"
+              className="object-cover rounded-xl"
+              src={item.img}
+              width={150}
+            />
+          </div>
         </CardBody>
       </Card>
     </div>

@@ -12,7 +12,7 @@ export default function App() {
     header: 'WifineticTwo',
     img: '/images/wifinetictwo.png',
     link: '/posts/wifinetictwo',
-    className: 'lg:col-span-3 md:col-span-6 mx-auto'
+    className: 'lg:col-span-3 md:col-span-6 mx-auto md:gap-4'
   };
   return (
     <div className="relative h-full">
@@ -35,8 +35,8 @@ export default function App() {
         </span>
       </div>
       <div className="w-4/5 mx-auto mb-[3rem] ">
-          <Divider className="mt-4 my-4" />
-          <p className="font-semibold text-xl text-[#00BFFF]">Explore</p>
+          <Divider className="my-[3rem]" />
+          <p className="font-semibold text-xl text-[#00BFFF] my-[2rem]">Explore</p>
           <div className="md:grid md:grid-cols-12 mt-3">
             <CardButton item={item}/>
           </div>
