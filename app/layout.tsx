@@ -20,7 +20,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Providers>
           <div className="block md:flex md:flex-row">
             <Nav className="m-0 md:sticky md:top-0 md:w-2/12 md:h-[100vh] h-[23vh] bg-[rgb(86,93,95)] bg-gradient-to-r from-[#3f3f46] to-[#3f3f46]" />
-            <div className={`w-10/12 ${bg}`}>{children}</div>
+            <div className={`md:w-10/12 ${bg}`}>{children}</div>
           </div>
         </Providers>
       </body>
