@@ -2,7 +2,7 @@
 import { Span } from "next/dist/trace";
 import React, { ReactNode } from "react";
 import { Typewriter } from 'react-simple-typewriter';
-
+import {Divider} from "@nextui-org/react";
 export default function App() {
   return (
     <div>
@@ -23,8 +23,11 @@ export default function App() {
           deleteSpeed={10}
         />
       </span>
-      
-      <p className="absolute top-[50vh] bottom-[50vh]">Updating</p>
+
+      <div className="absolute top-[30vh] bottom-[30vh]">
+        <Divider className="mt-4 my-4"/>
+        <p>You can intere</p>
+      </div>
     </div>
     </div>
     
