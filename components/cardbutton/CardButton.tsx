@@ -8,6 +8,7 @@ type CardItem = {
   header: string;
   img: string;
   link: string;
+  className: string;
 };
 
 interface CardButtonProps {
@@ -22,7 +23,7 @@ const CardButton: React.FC<CardButtonProps> = ({ item }) => {
   };
 
   return (
-    <div onClick={() => handleClick(item.link)} style={{ cursor: 'pointer' }}>
+    <div onClick={() => handleClick(item.link)} style={{ cursor: 'pointer' }} className={item.className}>
       <Card className="py-4 bg-[#52525B] border-2 hover:bg-[#71717A] active:bg-[#27272A]">
         <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
           <p className="text-tiny uppercase font-bold">{item.subtitle}</p>
@@ -34,7 +35,7 @@ const CardButton: React.FC<CardButtonProps> = ({ item }) => {
             alt="Card background"
             className="object-cover rounded-xl"
             src={item.img}
-            width={270}
+            width={150}
           />
         </CardBody>
       </Card>
