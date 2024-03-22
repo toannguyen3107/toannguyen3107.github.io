@@ -11,10 +11,11 @@ export default function App() {
     date: '2024-22-3',
     header: 'WifineticTwo',
     img: '/images/wifinetictwo.png',
-    link: '/posts/wifinetictwo'
+    link: '/posts/wifinetictwo',
+    className: 'lg:col-span-3 md:col-span-6 mx-auto'
   };
   return (
-    <div>
+    <div className="relative h-full">
       <div className="w-full bg-[#27272A] px-2 py-1">
         <h2 className="font-extrabold text-xl">Toan Nguyen&apos;s personal site</h2>
       </div>
@@ -32,15 +33,16 @@ export default function App() {
             deleteSpeed={10}
           />
         </span>
-
-        <div className="absolute top-[20vh] bottom-[20vh]">
+      </div>
+      <div className="w-4/5 mx-auto mb-[3rem] ">
           <Divider className="mt-4 my-4" />
           <p className="font-semibold text-xl text-[#00BFFF]">Explore</p>
-          <div className="mt-3">
+          <div className="md:grid md:grid-cols-12 mt-3">
             <CardButton item={item}/>
           </div>
         </div>
-        <div></div>
+      <div className="absolute bottom-0 left-0 bottom-0 w-full bg-[#27272A] px-2 py-1">
+        <h2 className="text-center font-bold text-lg">&copy; Minh Toan - 2024</h2>
       </div>
     </div>
 
