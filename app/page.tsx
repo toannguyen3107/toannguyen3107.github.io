@@ -4,8 +4,6 @@ import React, { ReactNode } from "react";
 import { Typewriter } from 'react-simple-typewriter';
 
 export default function App() {
-  const cur: ReactNode = "*";
-
   return (
     <div>
       <div className="w-full bg-[#27272A] px-2 py-1">
