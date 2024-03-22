@@ -24,9 +24,9 @@ export default function App() {
         />
       </span>
 
-      <div className="absolute top-[30vh] bottom-[30vh]">
+      <div className="absolute top-[20vh] bottom-[20vh]">
         <Divider className="mt-4 my-4"/>
-        <p>You can intere</p>
+        <p className="font-semibold text-xl text-[#00BFFF]">Explore</p>
       </div>
     </div>
     </div>
