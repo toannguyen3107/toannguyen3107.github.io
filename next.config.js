@@ -3,7 +3,6 @@
  */
 const nextConfig = {
     output: 'export',
-    publicDir: 'images'
     // Optional: Change links `/me` -> `/me/` and emit `/me.html` -> `/me/index.html`
     // trailingSlash: true,
    
