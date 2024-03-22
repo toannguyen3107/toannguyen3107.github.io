@@ -13,13 +13,14 @@ export const metadata: Metadata = {
   }
 }
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const bg = "bg-gradient-to-r from-[#000000] from-20% via-[#191919] via-40% via-[#333] via-60% via-[#4c4c4c] via-80% to-[#666] to-100%"
   return (
     <html lang="en" className='dark'>
       <body className={inner.className}>
         <Providers>
           <div className="block md:flex md:flex-row">
-            <Nav className="m-0 md:sticky md:top-0 md:w-2/12 md:h-[100vh] h-[23vh] bg-[rgb(86,93,95)] bg-[linear-gradient(90deg, rgba(86,93,95,1) 0%, rgba(76,76,83,1) 31%, rgba(171,196,203,1) 68%, rgba(193,224,231,1) 99%)] " />
-            <div className="w-10/12">{children}</div>
+            <Nav className="m-0 md:sticky md:top-0 md:w-2/12 md:h-[100vh] h-[23vh] bg-[rgb(86,93,95)] bg-gradient-to-r from-[#3f3f46] to-[#3f3f46]" />
+            <div className={`w-10/12 ${bg}`}>{children}</div>
           </div>
         </Providers>
       </body>
