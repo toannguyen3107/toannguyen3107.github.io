@@ -1,9 +1,11 @@
 export const list_post = [
     {
-        name: 'picoctf2024',
+        header: 'Wifinetic',
+        subtitle: 'Hackthebox',
         tag: ['ctf', 'picoctf', 'cybersecurity', 'webexploit', 'crypto'],
-        date: new Date('2023-03-16'),
-        path: '/posts/picoctf2024'
+        date: new Date('2023-03-16').toISOString().slice(0, 10),
+        path: '/posts/wifinetictwo',
+        img: '/images/wifinetictwo.png'
     }
 ];
 export const author = 'Nguyen Minh Toan';

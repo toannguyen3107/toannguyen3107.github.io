@@ -7,15 +7,16 @@ type CardItem = {
   date: string;
   header: string;
   img: string;
-  link: string;
-  className: string;
+  path: string;
+  tag: string[];
 };
 
 interface CardButtonProps {
   item: CardItem;
+  className: string;
 }
 
-const CardButton: React.FC<CardButtonProps> = ({ item }) => {
+const CardButton: React.FC<CardButtonProps> = ({ item, className}) => {
   const router = useRouter();
   
   const handleClick = (link: string) => {
@@ -24,9 +25,9 @@ const CardButton: React.FC<CardButtonProps> = ({ item }) => {
 
   return (
     <div 
-      onClick={() => handleClick(item.link)} 
+      onClick={() => handleClick(item.path)} 
       style={{ cursor: 'pointer', display: 'flex', justifyContent: 'center', alignItems: 'center' }} 
-      className={item.className}
+      className={className}
     >
       <Card className="py-4 bg-[#52525B] border-2 hover:bg-[#71717A] active:bg-[#27272A] w-[200px]">
         <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
