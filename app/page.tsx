@@ -10,7 +10,8 @@ export default function App() {
     subtitle: 'Hackthebox',
     date: '2024-22-3',
     header: 'WifineticTwo',
-    img: '/images/wifinetictwo.png'
+    img: '/images/wifinetictwo.png',
+    link: '/posts/wifinetictwo'
   };
   return (
     <div>
@@ -35,7 +36,7 @@ export default function App() {
         <div className="absolute top-[20vh] bottom-[20vh]">
           <Divider className="mt-4 my-4" />
           <p className="font-semibold text-xl text-[#00BFFF]">Explore</p>
-          <div>
+          <div className="mt-3">
             <CardButton item={item}/>
           </div>
         </div>
