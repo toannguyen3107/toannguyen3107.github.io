@@ -12,13 +12,15 @@ interface SubImageProps {
 
 const SubImage: React.FC<SubImageProps> = ({ img }) => {
     return (
-        <Image
-            width={img.size}
-            alt={img.alt}
-            src={img.path}
-            className="my-3 text-center "
+        <div className="flex justify-center">
+            <Image
+                width={img.size}
+                alt={img.alt}
+                src={img.path}
+                className="my-3 text-center"
+            />
+        </div>
 
-        />
     );
 }
 
