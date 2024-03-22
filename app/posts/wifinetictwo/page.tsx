@@ -66,9 +66,15 @@ export default function Page() {
             <div id="enumeration" className="my-2">
                 <SubHeader item={{ num: '2', content: 'Enumeration' }} />
                 <SubPara content={'To scan a target machine using the Nmap tool, execute the following command:'} />
-                <Code color="success" >nmap -sV -A -p- --min-rate 1500 &lt;target_machine&gt;</Code>
+                <div className="overflow-x-auto">
+                    <Code color="success" >nmap -sV -A -p- --min-rate 1500 &lt;target_machine&gt;</Code>
+                </div>
+                
                 <SubPara content={'Upon scanning, you observe that two ports are open: Port 22 for SSH and Port 8080 for Werkzeug. When accessing http://<target_machine>:8080/, it redirects to /login, indicating the usage of OpenPLC. Scan dir with gobuster by run following command: '} />
-                <Code color="success">gobuster -w /usr/share/dirb/&lt;dirlist&gt; -u &lt;target_host&gt;:8080</Code>
+                <div className="overflow-x-auto">
+                    <Code color="success">gobuster -w /usr/share/dirb/&lt;dirlist&gt; -u &lt;target_host&gt;:8080</Code>
+                </div>
+                
                 <SubImage img={{
                     alt: 'dirsearch',
                     path: '/images/wifinetictwo/dirsearch.png',
