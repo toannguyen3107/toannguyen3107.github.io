@@ -9,7 +9,7 @@ export default function App() {
   return (
     <div>
       <div className="w-full bg-[#27272A] px-2 py-1">
-        <h2 className="font-medium text-xl">Toan Nguyen's personal site</h2>
+        <h2 className="font-extrabold text-xl">Toan Nguyen's personal site</h2>
       </div>
       <div className="mt-[3rem] w-4/5 mx-auto drop-shadow-xl contrast-200">
       <p className="font-extrabold text-3xl text-[#d8d8d8] blur-[0.1px] italic">Hello everyone</p>
