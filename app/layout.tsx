@@ -6,7 +6,7 @@ import type { Metadata } from "next";
 import { inner } from "@/config/fonts";
 export const metadata: Metadata = {
   title: 'Toan Nguyen',
-  icons: {icon: './favicon.ico'},
+  icons: { icon: './favicon.ico' },
   openGraph: {
     title: 'Blog - Personal website',
     description: 'Toan Nguyen\'s blog'
@@ -20,7 +20,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Providers>
           <div className="block md:flex md:flex-row">
             <Nav className="m-0 md:sticky md:top-0 md:w-2/12 md:h-[100vh] h-[23vh] bg-[rgb(86,93,95)] bg-gradient-to-r from-[#3f3f46] to-[#3f3f46]" />
-            <div className={`md:w-10/12 h-[100vh] ${bg}`}>{children}</div>
+            <div className={`relative md:w-10/12 h-[100vh] ${bg} `}>
+              <div className="w-full bg-[#27272A] px-2 py-1">
+                <h2 className="font-extrabold text-xl">Toan Nguyen&apos;s personal site</h2>
+              </div>
+              {children}
+              <div className="absolute bottom-0 left-0 bottom-0 w-full bg-[#27272A] px-2 py-1">
+                <h2 className="text-center font-bold text-lg">&copy; Minh Toan - 2024</h2>
+              </div>
+            </div>
           </div>
         </Providers>
       </body>
