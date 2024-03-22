@@ -66,23 +66,21 @@ const Nav: React.FC<{ className?: string }> = ({ className }) => {
       <div className="block md:absolute m-auto md:mx-auto footnav bottom-10 flex items-center flex-row gap-4 justify-center bottom-[5%] left-[50%] right-[50%]">
         <Link
           href="https://github.com/toannguyen3107"
-          className="text-3xl hover:text-white"
+          className="text-3xl"
           isExternal
-          color="success"
-        ><FaGithub /></Link>
+        ><FaGithub className="text-gray-800 hover:text-slate-50" /></Link>
         <Link
           href="mailto:minhtoanaglx@gmail.com"
           aria-label="email"
           isExternal
-          className="text-3xl hover:text-white"
-          color="success"
-        ><IoIosMail /></Link>
+          className="text-3xl"
+        ><IoIosMail className="text-gray-800 hover:text-slate-50"/></Link>
         <Link
           href="https://facebook.com/nguyenminhtoan07"
-          className="text-3xl hover:text-white"
+          className="text-3xl"
           isExternal
           color="success"
-        ><FaFacebook /></Link>
+        ><FaFacebook className="text-gray-800 hover:text-slate-50"/></Link>
       </div>
     </div>
   );
