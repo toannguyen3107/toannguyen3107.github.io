@@ -26,7 +26,7 @@ export default function App() {
 
       <div className="absolute top-[20vh] bottom-[20vh]">
         <Divider className="mt-4 my-4"/>
-        <p className="font-semibold text-lg text-[#00BFFF]">Explore</p>
+        <p className="font-semibold text-xl text-[#00BFFF]">Explore</p>
       </div>
     </div>
     </div>
