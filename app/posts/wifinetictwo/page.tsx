@@ -55,7 +55,7 @@ export default function Page() {
     ];
 
     return (
-        <div className="mt-3 w-full md:w-4/5 mx-auto">
+        <div className="mt-3 w-[90%] md:w-4/5 mx-auto">
             <HeaderBlog name="WifinetecTwo" />
             <Divider />
             <TableContent items={items} />
