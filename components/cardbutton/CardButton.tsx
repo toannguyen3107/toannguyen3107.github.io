@@ -16,20 +16,20 @@ interface CardButtonProps {
   className: string;
 }
 
-const CardButton: React.FC<CardButtonProps> = ({ item, className}) => {
+const CardButton: React.FC<CardButtonProps> = ({ item, className }) => {
   const router = useRouter();
-  
+
   const handleClick = (link: string) => {
     router.push(link);
   };
 
   return (
-    <div 
-      onClick={() => handleClick(item.path)} 
-      style={{ cursor: 'pointer', display: 'flex', justifyContent: 'center', alignItems: 'center' }} 
+    <div
+      onClick={() => handleClick(item.path)}
+      style={{ cursor: 'pointer', display: 'flex', justifyContent: 'center', alignItems: 'center' }}
       className={className}
     >
-      <Card className="py-4 bg-[#52525B] border-2 hover:bg-[#71717A] active:bg-[#27272A] w-[200px]">
+      <Card className="py-4 bg-[#52525B] border-2 hover:bg-[#71717A] active:bg-[#27272A] w-[200px] h-[300px]">
         <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
           <p className="text-tiny uppercase font-bold mx-auto">{item.subtitle}</p>
           <small className="text-default-500 mx-auto">{item.date}</small>
@@ -38,10 +38,12 @@ const CardButton: React.FC<CardButtonProps> = ({ item, className}) => {
         <CardBody className="overflow-visible py-2">
           <div style={{ display: 'flex', justifyContent: 'center' }}>
             <Image
-              alt="Card background"
-              className="object-cover rounded-xl"
-              src={item.img}
               width={150}
+              height={150}
+              alt="Card background"
+              className="object-cover rounded-xl h-[150px] overflow-hidden"
+              src={item.img}
+
             />
           </div>
         </CardBody>
