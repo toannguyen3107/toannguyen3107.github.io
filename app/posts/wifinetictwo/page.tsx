@@ -89,7 +89,7 @@ export default function Page() {
                 >See this link</Link>
             </div>
             <div id="exploitation" className="my-2">
-                <SubHeader item={{ num: '3', content: 'Enumeration' }} />
+                <SubHeader item={{ num: '3', content: 'Exploitation' }} />
                 <SubPara content={'Download the Python code provided in the link. However, it currently doesn &apos;t work due to incorrect configurations in the file. You need to make alterations as shown in the image below."'} />
                 <SubImage img={{
                     alt: 'config file',
