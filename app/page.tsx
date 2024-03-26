@@ -7,7 +7,7 @@ import CardButton from '@/components/cardbutton/CardButton';
 import { list_post } from "@/config/post";
 export default function App() {
   
-  const className = 'lg:col-span-3 md:col-span-6 mx-auto md:gap-4';
+  const className = 'xl:col-span-3 md:col-span-6 mx-auto md:gap-4 mt-4';
   return (
     <div>
       <div className="mt-[3rem] w-4/5 mx-auto drop-shadow-xl contrast-200">
