@@ -8,14 +8,14 @@ import { FaFacebook } from "react-icons/fa";
 import { Link } from "@nextui-org/react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { useState } from "react";
-
-import { useRouter } from "next/navigation";
-
+import { useRouter, usePathname } from "next/navigation";
 
 const Nav: React.FC<{ className?: string }> = ({ className }) => {
-  
+
   const router = useRouter();
-  
+  const pathname = usePathname();
+  const firstSegmentOfPathname = '/'+pathname.split('/')[1];
+  console.log(firstSegmentOfPathname);
   const handleNavigation = (link: string) => () => {
     router.push(link);
   };
@@ -49,18 +49,20 @@ const Nav: React.FC<{ className?: string }> = ({ className }) => {
         onClick={handleMenu}
       />
 
-      <Listbox
-        aria-label="Actions"
-        // onAction={handleNavigation}
-        className={`mt-[3rem] ${menuVisible ? lst : ''}`}
-      >
-        {navigationLinks.map((link) => (
+        <Listbox
+          aria-label="Actions"
+          className={`mt-[3rem] ${menuVisible ? lst : ''}`}
+        >
+          {navigationLinks.map((link) => (
             <ListboxItem
-            onClick={handleNavigation(link.link)} 
-            className={`mt-1 text-center mx-auto`} 
-            key={link.key}>{link.label}</ListboxItem>
-        ))}
-      </Listbox>
+              onClick={handleNavigation(link.link)}
+              variant="solid"
+              color={firstSegmentOfPathname === link.link ? 'warning' : 'secondary'}
+              className={`mt-1 text-center mx-auto hover:transition hover:ease-in-out hover:delay-150 ${firstSegmentOfPathname == link.link ? 'text-warning' : 'secondary'}`}
+              key={link.key}>{link.label}</ListboxItem>
+          ))}
+        </Listbox>
+
 
 
       <div className="block md:absolute m-auto md:mx-auto footnav bottom-10 flex items-center flex-row gap-4 justify-center bottom-[5%] left-[50%] right-[50%]">
@@ -74,13 +76,13 @@ const Nav: React.FC<{ className?: string }> = ({ className }) => {
           aria-label="email"
           isExternal
           className="text-3xl"
-        ><IoIosMail className="text-gray-800 hover:text-slate-50"/></Link>
+        ><IoIosMail className="text-gray-800 hover:text-slate-50" /></Link>
         <Link
           href="https://facebook.com/nguyenminhtoan07"
           className="text-3xl"
           isExternal
           color="success"
-        ><FaFacebook className="text-gray-800 hover:text-slate-50"/></Link>
+        ><FaFacebook className="text-gray-800 hover:text-slate-50" /></Link>
       </div>
     </div>
   );
