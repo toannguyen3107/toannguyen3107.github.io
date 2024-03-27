@@ -11,11 +11,10 @@ import hljs from "highlight.js";
 import 'highlight.js/styles/atom-one-dark.css';
 import { useEffect } from "react";
 export default function Page() {
-
     hljs.registerLanguage('c', require('highlight.js/lib/languages/c'));
     useEffect(() => {
         hljs.initHighlighting();
-      }, []);
+    }, []);
     const findDate = (header: string) => {
         // Check if list_post array exists and has items
         if (list_post && list_post.length > 0) {
@@ -67,7 +66,7 @@ export default function Page() {
             <div id="exploit" className="my-2">
                 <SubHeader item={{ num: '2', content: 'Exploit' }} />
                 <SubPara content={'Connect to the server over SSH and check the file named passcode.c.'} />
-                <pre className=" h-[300px]  overflow-auto my-4 border-1 rounded-[2rem] p-1"><code className="c">{`//passcode.c
+                <pre className=" h-[300px]  overflow-auto my-4 border-1 rounded-[2rem]"><code className="c">{`//passcode.c
                     #include <stdio.h>
                     #include <stdlib.h>
                     

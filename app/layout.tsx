@@ -6,13 +6,18 @@ import type { Metadata } from "next";
 import { inner } from "@/config/fonts";
 import { Divider } from "@nextui-org/react";
 export const metadata: Metadata = {
-  title: 'Toan Nguyen',
-  icons: { icon: './favicon.ico' },
+  title: {
+    default: 'Toan Nguyen - Personal Website',
+    template: '%s  - Personal Website'
+  },
+  icons: { icon: '/favicon.ico' },
   openGraph: {
-    title: 'Blog - Personal website',
-    description: 'Toan Nguyen\'s blog'
-  }
+    title: 'Toan Nguyen - Blog',
+    description: 'Explore Toan Nguyen\'s personal blog and writings.',
+  },
+  keywords: 'Toan Nguyen, personal website, blog, writings, portfolio, projects, technology, programming, web development, software engineering, pwnable, hackthebox, binary exploitation, web exploit',
 }
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   const bg = "bg-gradient-to-r from-[#000000] from-20% via-[#191919] via-40% via-[#333] via-60% via-[#4c4c4c] via-80% to-[#666] to-100%"
   return (
@@ -26,7 +31,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <h2 className="font-extrabold text-xl">Toan Nguyen&apos;s personal site</h2>
               </div>
               <div className="overflow-auto">
-              {children}
+                {children}
               </div>
               <div className="bottom-0 left-0 bottom-0 w-2/5 mx-auto px-2 py-1">
                 <Divider />
