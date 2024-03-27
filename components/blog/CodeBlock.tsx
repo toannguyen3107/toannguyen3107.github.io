@@ -1,8 +1,8 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Code as NextUICode } from "@nextui-org/react";
 
 type ItemType = {
-    color: 'success' | 'warning' | 'error' | 'secondary' | 'primary' | 'danger';
+    color: 'success' | 'warning' | 'danger' | 'secondary' | 'primary';
     content: string;
 }
 
@@ -13,11 +13,9 @@ interface CodeBlockProps {
 const CodeBlock: React.FC<CodeBlockProps> = ({ item }) => {
     return (
         <div className="overflow-x-auto">
-            <NextUICode color={item.color} css={{ m: "5px" }}>{item.content}</NextUICode>
+            <NextUICode color={item.color} className="m-[5px]">{item.content}</NextUICode>
         </div>
     );
 }
 
-
-
-export { CodeBlock,  };
+export { CodeBlock };
