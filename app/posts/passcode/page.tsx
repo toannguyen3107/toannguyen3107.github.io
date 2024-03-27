@@ -66,7 +66,7 @@ export default function Page() {
             <div id="exploit" className="my-2">
                 <SubHeader item={{ num: '2', content: 'Exploit' }} />
                 <SubPara content={'Connect to the server over SSH and check the file named passcode.c.'} />
-                <pre className=" h-[300px]  overflow-auto my-4 border-1 rounded-[2rem]"><code className="c">{`//passcode.c
+                <pre className="overflow-auto my-4 border-1 rounded-[2rem]"><code className="c">{`//passcode.c
                     #include <stdio.h>
                     #include <stdlib.h>
                     
