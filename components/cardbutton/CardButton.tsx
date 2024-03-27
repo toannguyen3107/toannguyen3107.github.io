@@ -14,12 +14,14 @@ type CardItem = {
 interface CardButtonProps {
   item: CardItem;
   className: string;
+  setLoading: (value: boolean) => void;
 }
 
-const CardButton: React.FC<CardButtonProps> = ({ item, className }) => {
+const CardButton: React.FC<CardButtonProps> = ({ item, className, setLoading }) => {
   const router = useRouter();
 
   const handleClick = (link: string) => {
+    setLoading(true);
     router.push(link);
   };
 
