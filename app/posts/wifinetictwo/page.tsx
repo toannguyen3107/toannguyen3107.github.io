@@ -8,7 +8,12 @@ import SubImage from "@/components/blog/SubImage";
 import { Link } from "@nextui-org/react";
 import FooterBlog from '@/components/blog/Footer'
 import { list_post } from "@/config/post";
+export const metadata = {
+    title: 'Wifinetictwo',
+}
 export default function Page() {
+    
+    
     const findDate = (header: string) => {
         // Check if list_post array exists and has items
         if (list_post && list_post.length > 0) {

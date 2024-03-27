@@ -1,5 +1,13 @@
 export const list_post = [
     {
+        header: 'Random',
+        subtitle: 'Pwnable.kr',
+        tag: ['ctf', 'pưn', 'cybersecurity', 'binaryexploit', 'hackthebox'],
+        date: new Date('2024-04-27').toISOString().slice(0, 10),
+        path: '/posts/random',
+        img: '/images/random/random.png'
+    },
+    {
         header: 'Headless',
         subtitle: 'Hackthebox',
         tag: ['ctf', 'webexploit', 'cybersecurity', 'binaryexploit', 'hackthebox'],

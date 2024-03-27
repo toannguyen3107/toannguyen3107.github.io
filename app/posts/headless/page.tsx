@@ -12,9 +12,9 @@ import { list_post } from "@/config/post";
 import hljs from "highlight.js";
 import 'highlight.js/styles/atom-one-dark.css';
 import { useEffect } from "react";
-
 export default function Page() {
-    hljs.registerLanguage('shell', require('highlight.js/lib/languages/bash'));
+    
+    hljs.registerLanguage('bash', require('highlight.js/lib/languages/bash'));
 
     useEffect(() => {
         hljs.initHighlighting();
@@ -159,8 +159,8 @@ export default function Page() {
                         path: '/images/headless/img11.png',
                         size: 700
                     }} />
-                    <pre className="overflow-auto my-4 border-1 rounded-[2rem] p-1"><code className="shell">
-                    {`──(toan㉿ToanNguyen)-[~]
+                    <pre className="overflow-auto my-4 border-1 rounded-[2rem] p-1"><code className="bash">
+                        {`──(toan㉿ToanNguyen)-[~]
 └─$ nc -lnvp 4444
 listening on [any] 4444 ...
 connect to [10.10.14.18] from (UNKNOWN) [10.10.11.8] 37370
@@ -271,9 +271,9 @@ bash-5.2#
 `}
                     </code>
                     </pre>
-                <SubPara content={`When checking sudo permissions, you can observe that you have the ability to run sudo with all permissions using /usr/bin/syscheck. read this file and analyze its contents. This it anwser when i ask chatgpt.`}/>
-                <pre className="overflow-auto my-4 border-1 rounded-[2rem] p-1"><code>
-    {`This script appears to be a Bash script (denoted by the shebang \`#!/bin/bash\` at the beginning), designed to perform various system checks and operations. Let's break down each part:
+                    <SubPara content={`When checking sudo permissions, you can observe that you have the ability to run sudo with all permissions using /usr/bin/syscheck. read this file and analyze its contents. This it anwser when i ask chatgpt.`} />
+                    <pre className="overflow-auto my-4 border-1 rounded-[2rem] p-1"><code>
+                        {`This script appears to be a Bash script (denoted by the shebang \`#!/bin/bash\` at the beginning), designed to perform various system checks and operations. Let's break down each part:
 
 1. **Check Root Privileges**: 
    - The script checks if it's being run with root privileges (\`$EUID\` holds the effective user ID). If not (\`-ne\` means "not equal"), it exits with a status of 1, indicating an error.
@@ -301,15 +301,15 @@ bash-5.2#
    - Finally, the script exits with a status of 0, indicating successful execution.
 
 Overall, this script is meant to provide system information such as kernel modification time, available disk space, system load average, and to ensure the database service is running, starting it if necessary. However, there is a line \`exit 0\` at the end of the script which makes the script exit without executing the block of code after it. This means the last line \`what mean in this code\` is unreachable and will never be executed.`}
-</code></pre>
-                <SubPara content={`Create an initdb.sh script with content to set the user and sticky permissions for it. Run syscheck -> run bash -> get flag.`}/>
+                    </code></pre>
+                    <SubPara content={`Create an initdb.sh script with content to set the user and sticky permissions for it. Run syscheck -> run bash -> get flag.`} />
                 </div>
                 <SubImage img={{
                     alt: 'Done',
                     path: '/images/headless/result.png',
                     size: 500
                 }} />
-            <div className="overflow-x-auto">
+                <div className="overflow-x-auto">
                     <Code color="warning" className="my-3">Congratulations on obtaining the Root flag! Well done!</Code>
                 </div>
             </div>
