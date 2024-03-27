@@ -8,9 +8,6 @@ import SubImage from "@/components/blog/SubImage";
 import { Link } from "@nextui-org/react";
 import FooterBlog from '@/components/blog/Footer'
 import { list_post } from "@/config/post";
-export const metadata = {
-    title: 'Wifinetictwo',
-}
 export default function Page() {
     
     
