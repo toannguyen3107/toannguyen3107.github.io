@@ -19,7 +19,7 @@ export default function SkeletonLoading() {
                 <div className="md:grid md:grid-cols-12 mt-3">
                     {list_post.map((item, index) => (
                         <div
-                            
+                            key={index}
                             style={{ cursor: 'pointer', display: 'flex', justifyContent: 'center', alignItems: 'center' }}
                             className={className}
                         >
