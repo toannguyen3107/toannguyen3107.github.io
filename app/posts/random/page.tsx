@@ -10,10 +10,10 @@ import { list_post } from "@/config/post";
 import hljs from "highlight.js";
 import 'highlight.js/styles/atom-one-dark.css';
 import { useEffect } from "react";
-import { CodeBlock, CodeFormat } from "@/components/blog/CodeBlock";
+import { CodeBlock } from "@/components/blog/CodeBlock";
 
 export default function Page() {
-    
+
     hljs.registerLanguage('bash', require('highlight.js/lib/languages/bash'));
     useEffect(() => {
         hljs.initHighlighting();
@@ -67,8 +67,8 @@ export default function Page() {
             </div>
             <div id="exploitation" className="my-2">
                 <SubHeader item={{ num: '2', content: 'Exploitation' }} />
-                <CodeFormat item={
-                    {content: `
+                <pre className=" h-[300px]  overflow-auto my-4 border-1 rounded-[2rem]"><code className="c">
+                    {`
                     ## random.c 
                     #include <stdio.h>
 
@@ -88,35 +88,33 @@ export default function Page() {
                             printf("Wrong, maybe you should try 2^32 cases.\\n");
                             return 0;
                     }
-                    `,
-                    code: 'c'
-                }
-                }/>
-                <SubImage img={{
-                    alt: 'Write program test',
-                    path: '/images/random/writeprogram.png',
-                    size: 800
-                }} />
-                <SubPara content={`You may notice from the image above that the rand() function is not being used correctly, resulting in the same value being generated repeatedly`}/>
-                <CodeBlock item={
-                    {
-                        content: `we have x xor y = z => z xor y = x xor y xor y = x`,
-                        color: 'warning'
-                    }
-                } />
-                <SubImage img={{
-                    alt: 'Calculate and result',
-                    path: '/images/random/result.png',
-                    size: 800
-                }} />
-                <CodeBlock item={
-                    {
-                        content: `Congratulations! The flag has been found.`,
-                        color: 'warning'
-                    }
-                } />
+                    `}
+                    </code></pre>
+                    <SubImage img={{
+                        alt: 'Write program test',
+                        path: '/images/random/writeprogram.png',
+                        size: 800
+                    }} />
+                    <SubPara content={`You may notice from the image above that the rand() function is not being used correctly, resulting in the same value being generated repeatedly`} />
+                    <CodeBlock item={
+                        {
+                            content: `we have x xor y = z => z xor y = x xor y xor y = x`,
+                            color: 'warning'
+                        }
+                    } />
+                    <SubImage img={{
+                        alt: 'Calculate and result',
+                        path: '/images/random/result.png',
+                        size: 800
+                    }} />
+                    <CodeBlock item={
+                        {
+                            content: `Congratulations! The flag has been found.`,
+                            color: 'warning'
+                        }
+                    } />
+                </div>
+                    <FooterBlog date={date} />
             </div>
-            <FooterBlog date={date} />
-        </div>
-    );
+            );
 }
