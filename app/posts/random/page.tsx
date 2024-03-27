@@ -67,7 +67,7 @@ export default function Page() {
             </div>
             <div id="exploitation" className="my-2">
                 <SubHeader item={{ num: '2', content: 'Exploitation' }} />
-                <pre className=" h-[300px]  overflow-auto my-4 border-1 rounded-[2rem]"><code className="c">
+                <pre className="overflow-auto my-4 border-1 rounded-[2rem]"><code className="c">
                     {`
                     ## random.c 
                     #include <stdio.h>
