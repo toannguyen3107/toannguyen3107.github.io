@@ -34,7 +34,7 @@ I love connecting with others who share similar interests. Feel free to reach ou
 - **Email:** [minhtoan2110592@gmail.com](mailto:minhtoan2110592@gmail.com)
 - **LinkedIn:** [Your LinkedIn Profile](https://www.linkedin.com/in/toannguyen03)
 - **GitHub:** [Your GitHub Profile](https://github.com/toannguyen3107)
-- **facebook:** [Facebook Profile](https://facebook.com/nguyenminhtoan03)
+- **facebook:** [Facebook Profile](https://facebook.com/nguyenminhtoan07)
 
 Thank you for visiting my blog. I hope you find the content helpful and inspiring!
 
