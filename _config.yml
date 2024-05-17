@@ -16,7 +16,7 @@ timezone: Asia/Saigon
 
 title: Minh Toan # the main title
 
-Tagline: Passionate about Cybersecurity # it will display as the sub-title
+tagline: Passionate about Cybersecurity # it will display as the sub-title
 
 description: >- # used by seo meta and the atom feed
   Minh Toan blog, CTF, hackthebox, exploit, web, pwn, reverse engineering,...
