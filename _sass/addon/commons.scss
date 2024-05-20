@@ -703,8 +703,10 @@ $btn-mb: 0.5rem;
 
   #avatar {
     display: block;
-    width: 7rem;
-    height: 7rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: 6em;
+    height: 6rem;
     overflow: hidden;
     box-shadow: var(--avatar-border-color) 0 0 0 2px;
     transform: translateZ(0); /* fixed the zoom in Safari */
