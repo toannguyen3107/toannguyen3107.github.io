@@ -203,5 +203,7 @@ print("Screenshot saved as screenshot.png")
 ws.close()
 ```
 ![image.png](https://i.postimg.cc/VLr2znKx/image.png)
+
 Code đã hoạt động cảm ơn blog của Trung Quốc :<<, đại ý của đoạn code trên là tạo websocket từ cái socket mặc định sau đấy dùng api của devtools -> tạo tab mới -> rồi lưu file lại :> có id_rsa rồi lưu lại và vào thôi. Hoặc cứ scan 2 file root và user lại cho nhanh cũng đc. Nhờ blog này mới biết thì ra websocket cũng có thể khai thác như thế :>. bài này quá khó nên đa số đoạn sau đều là tham khảo hết :v Còn một cách là khai thác driver Marionette sẽ đơn giản hơn. (2h sáng r chào mn, chắc không ai xem :<<)
+![Blog tham khao](https://blog.csdn.net/m0_52742680/article/details/139086548) dùng gg dịch cho lẹ :>
 
