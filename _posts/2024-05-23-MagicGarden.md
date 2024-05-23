@@ -115,3 +115,11 @@ pbkdf2_sha256$600000$y1tAjUmiqLtSdpL2wL3h56$61u2yMfK3oYgnL31fX8R4k/0hTc6YXRfiOH4
 ➜  ~ cat hash
 pbkdf2_sha256$600000$y1tAjUmiqLtSdpL2wL3h56$61u2yMfK3oYgnL31fX8R4k/0hTc6YXRfiOH4LYVsEXo=
 ```
+![image.png](https://i.postimg.cc/4xXRfnjs/image.png)
+Dùng `morty:jonasbrothers` có thể login vào ssh nhưng đây không chứa user flag :V <br>
+Check process đang chạy hoặc dùng `linpeas` để check sẽ thấy một process đáng ngờ là firefox debug.
+![image.png](https://i.postimg.cc/qMd9wzJy/image.png)
+Mấy group bên trung hay forum hacker bảo đây là lổ hỏng có thể khai thác r đọc file :< Check netstat thì thấy nó đang chạy vài cổng thử tạo tunel rồi check -> dùng `chisel` tool. [chisel's source](https://github.com/jpillora/chisel)
+![image.png](https://i.postimg.cc/1XYV9L3Z/image.png)
+firefox-esr chạy trên port 36825 -> tạo tunel check 
+![image.png](https://i.postimg.cc/dVCZYNMz/image.png)
