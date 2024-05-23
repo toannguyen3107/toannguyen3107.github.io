@@ -7,7 +7,7 @@ authors: [toan]
 toc: true
 ---
 ## Introduction
-Machine thuộc sessons 5, thuộc vào level cực khó, Linux :>. Trong bài này có thể khai thác lổ hỏng qua port (5000) - Docker Registry -> reverse shell -> khai thác firefox debug đang chạy dưới quyền root -> root flag. User flag thì chưa biết làm :>
+Machine thuộc sessons 5, thuộc vào level cực khó, Linux :>. Trong bài này có thể khai thác lổ hỏng qua port (5000) - Docker Registry -> reverse shell -> khai thác firefox debug đang chạy dưới quyền root -> root flag.
 
 ## Recons
 Đầu tiên cần nhận diện thứ gì ở mục tiêu
