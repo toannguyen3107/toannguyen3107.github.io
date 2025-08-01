@@ -17,7 +17,9 @@ A cube is the shadow of a tesseract casted on 3 dimensions. I wonder what other 
 # Solution
 
 `%pip install seaborn scikit-learn`
-*Init*
+
+*First Step:* Import file `npz` từ đề bài, sau đó phân tích. file này có 2 tables là `tokens` và `embeddings`.
+
 ```python
 import numpy as np
 data = np.load("token_embeddings.npz")
