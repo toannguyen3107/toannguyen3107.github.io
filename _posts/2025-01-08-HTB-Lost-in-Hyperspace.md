@@ -28,7 +28,7 @@ print(tokens.shape)
 print(embeddings.shape)
 ```
 _Kết quả_
-```raw
+```text
 (110,) <class 'numpy.ndarray'>
 (110, 512)
 ```
